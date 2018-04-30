@@ -1,0 +1,5 @@
+L’application doit permettre de :
+Visualiser une liste d’entreprises et leurs informations
+La liste sera triable par chaque type de facteur (comme datatable)
+Possibilité d’ajout d’une entreprise
+Chaque entreprise à des détails et peut être localisée sur google map
