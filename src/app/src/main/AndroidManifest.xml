@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".IHM.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,15 +18,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".user_list">
+        <activity android:name=".IHM.user_list">
 
         </activity>
 
-        <activity android:name=".user_add">
+        <activity android:name=".IHM.user_add">
 
         </activity>
 
-        <activity android:name=".main_options">
+        <activity android:name=".IHM.main_options">
 
         </activity>
 
