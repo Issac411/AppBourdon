@@ -13,8 +13,8 @@ create table company(
     pc int,
     num varchar(11),
     fax int,
-    interName varchar(200) NOT NULL DEFAULT ‘aucun’,
-    interNickName varchar(200) NOT NULL DEFAULT ‘’,
+    interName varchar(200) NOT NULL DEFAULT 'aucun',
+    interNickName varchar(200) NOT NULL DEFAULT '',
     interNum varchar(11),
     interFax varchar(11),
     CONSTRAINT pk_company PRIMARY KEY (id)
@@ -83,7 +83,7 @@ create table practiced (
     id int AUTO_INCREMENT,
     idSpecialiation int,
     idCompany int,
-    CONSTRAINT fk_idSpecialisation FOREIGN KEY (idSpecialisation) REFERENCES specialisation (id),
+    CONSTRAINT fk_idSpecialisation FOREIGN KEY (idSpecialiation) REFERENCES specialisation (id),
     CONSTRAINT fk_idCompany FOREIGN KEY (idCompany) REFERENCES company (id),
     CONSTRAINT pk_practiced PRIMARY KEY (id)
 
