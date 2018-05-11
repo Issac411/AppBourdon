@@ -51,11 +51,15 @@ Une visite, on prend en compte sa durée, on peut y ajouter un commentaire et sa
 */
 create table entry(
     id int AUTO_INCREMENT,
+    idCompany int,
+    idCommercial,
     date timestamp NOT NULL,
     comment varchar(500) NOT NULL,
     duration int NOT NULL, /* en minutes*/
     status varchar(300),
-    CONSTRAINT pk_entry PRIMARY KEY (id)
+    CONSTRAINT pk_entry PRIMARY KEY (id),
+    CONSTRAINT fk_idCompany FOREIGN KEY (idCompany) REFERENCES company (id),
+    CONSTRAINT fk_idCommercial FOREIGN KEY (idCommercial) REFERENCES commercial (id),
 );
 
 /*
