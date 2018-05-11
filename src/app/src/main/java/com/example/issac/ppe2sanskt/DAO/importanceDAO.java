@@ -5,7 +5,7 @@ import com.example.issac.ppe2sanskt.MODEL.importance;
 public class importanceDAO extends DAO<importance> {
 private static final String TABLE_CLASSE = "importance";
     private static final String COLD_ID = "id";
-    private static final String COL_LIBELLE = "libelle";
+    private static final String COL_CONTENT = "libelle";
 
 
 

@@ -48,7 +48,7 @@ public abstract class model extends config
     Matthieu
     On constitue une requête via l'url et on l'exécute pour obtenir le résultat en JSON
      */
-        protected JSONObject getJsonFromURL(String leurl) {
+        protected JSONObject getJsonFromURL2(String leurl) {
             JSONObject json = new JSONObject();
             try {
                 OkHttpClient client = new OkHttpClient();           // intanciation du client
@@ -78,7 +78,7 @@ public abstract class model extends config
     Boutte
     On constitue une requête via l'url et on l'exécute pour obtenir le résultat en JSON
      */
-    protected JSONObject getJsonFromUrl2(String url){
+    protected JSONObject getJsonFromURL(String url){
         JSONObject res;
         try {
 
@@ -98,6 +98,19 @@ public abstract class model extends config
 
     public int getId() {
         return this.id;
+    }
+
+
+
+    /*
+    07/05
+    Matthieu
+    On forme une URL, magnifique
+    On fait entrer site&dossier+controllerDatabase+fonction(table)+act+param[tab]
+     */
+    protected void urlGen(String action, String... params ) {
+        String url = config.getUrl()+"Database/"+this.table+"/"+action;
+
     }
 
 
