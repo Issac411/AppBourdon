@@ -15,7 +15,7 @@ public class HttpClient extends AsyncTask<String, Void, String>{
     07/05
     Boutte
     Classe de Boutte pour sa récupération de données en JSON, il utilise donc une fonction qui s'exécute en arrière plan pour choper les données;
-    Elle est utilisée dans getJsonFromUrl2 et à la même fonctionnement que la getJsonFromUrl
+    Elle est utilisée dans getJsonFromUrl
      */
     protected String doInBackground(String... urls) {
         if(urls.length == 1) {
@@ -43,6 +43,19 @@ public class HttpClient extends AsyncTask<String, Void, String>{
         }
         return (this.result);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     protected void onPostExecute(Boolean result) {
     }

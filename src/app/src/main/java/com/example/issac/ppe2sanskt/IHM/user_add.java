@@ -15,9 +15,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
+import com.example.issac.ppe2sanskt.CONFIG.HttpClient;
+import com.example.issac.ppe2sanskt.CONFIG.config;
 import com.example.issac.ppe2sanskt.MODEL.importance;
 import com.example.issac.ppe2sanskt.MODEL.model;
 import com.example.issac.ppe2sanskt.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,8 +35,8 @@ public class user_add extends AppCompatActivity {
 
     private importance uneImportance;
     private Button sender;
-    private TextView gravite;
-    private EditText resultat;
+    private TextView gravite; // texte final
+    private EditText resultat; // texte à compléter
 
 
     @Override
@@ -51,9 +56,16 @@ public class user_add extends AppCompatActivity {
 
         sender.setOnClickListener(new OnClickListener() {            // quand on clique sur le bouton main_options
             public void onClick(View v) {
+                JSONObject res = new JSONObject();
                 uneImportance = new importance();
-                String content = resultat.getText().toString();
-                uneImportance.setContent(content);                                    // la fonction switchTo va changer l'activité
+                String url = uneImportance.urlGen("create",uneImportance.getContent());     // on prépare l'url pour la requête en fonction de l'action voulue + champ écrit
+                gravite.setText(url);               // debug url
+
+                res = uneImportance.getJsonFromURL(url);       // on exécute l'action et on récup si elle fonctionne ou non (true or false)
+                uneImportance.putInObj(res);                   // le résultat va dans l'objet, j'ai modif importance pour le debug pour avoir le res sql
+                gravite.setText(uneImportance.getContent());    // on affiche true or false
+
+
             }
         });
 
