@@ -42,18 +42,18 @@ import com.example.issac.ppe2sanskt.R;
 
 public class MainActivity extends AppCompatActivity {
     private Button exit;                                                // on déclare à l'avance tout les boutons ici dans l'activité
-    private Button user_view;
+    private Button specialisation_vue;
     private Button user_add;
-    private Button main_options;
+    private Button specialisation_add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {                // lorsque que l'activité est lancée
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);                         // le contenu affiché est celui du fichier "activity_main.xml"
         exit = (Button) findViewById(R.id.exit);                        // Le bouton exit est lié au bouton portant l'id "exit"
-        user_view = (Button) findViewById(R.id.user_view);              // Le bouton user_view est lié au bouton portant l'id "user_view"
+        specialisation_vue = (Button) findViewById(R.id.specialisation_vue);              // Le bouton user_view est lié au bouton portant l'id "user_view"
         user_add = (Button) findViewById(R.id.user_add);                // ... ^
-        main_options = (Button) findViewById(R.id.main_options);        //
+        specialisation_add = (Button) findViewById(R.id.specialisation_add);        //
 
 
 
@@ -64,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
                     System.exit(0);                              // android quitte l'application
                 }
             });
-        user_view.setOnClickListener(new OnClickListener() {            // quand on clique sur le bouton user_view
+        specialisation_vue.setOnClickListener(new OnClickListener() {            // quand on clique sur le bouton user_view
                     public void onClick(View v) {
-                        switchTo_user_list();                           // la fonction switchTo va changer l'activité
+                        switchTo_specialisation_vue();                           // la fonction switchTo va changer l'activité
                     }
                 });
 
@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        main_options.setOnClickListener(new OnClickListener() {            // quand on clique sur le bouton main_options
+        specialisation_add.setOnClickListener(new OnClickListener() {            // quand on clique sur le bouton main_options
             public void onClick(View v) {
-                switchTo_main_options();                                   // la fonction switchTo va changer l'activité
+                switchTo_specialisation_add();                                   // la fonction switchTo va changer l'activité
             }
         });
 
@@ -102,6 +102,16 @@ activity (this) to (user_list)
 
     public void switchTo_main_options() {
         Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.main_options.class);
+        startActivity(intent);
+    }
+
+    public void switchTo_specialisation_add() {
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation_add.class);
+        startActivity(intent);
+    }
+
+    public void switchTo_specialisation_vue() {
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation_vue.class);
         startActivity(intent);
     }
 

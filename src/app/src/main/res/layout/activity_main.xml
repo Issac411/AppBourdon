@@ -18,11 +18,11 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/user_view"
+                android:id="@+id/specialisation_vue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Vue des clients" />
+                android:text="Vue des specialisations" />
         </LinearLayout>
 
         <LinearLayout
@@ -44,11 +44,11 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/main_options"
+                android:id="@+id/specialisation_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Options" />
+                android:text="Ajouter une activité" />
         </LinearLayout>
 
         <LinearLayout

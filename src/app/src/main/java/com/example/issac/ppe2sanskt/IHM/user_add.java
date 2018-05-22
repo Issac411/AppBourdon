@@ -5,7 +5,9 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,6 +23,7 @@ import com.example.issac.ppe2sanskt.MODEL.importance;
 import com.example.issac.ppe2sanskt.MODEL.model;
 import com.example.issac.ppe2sanskt.R;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -47,23 +50,16 @@ public class user_add extends AppCompatActivity {
         gravite = (TextView) findViewById(R.id.gravite);
         resultat = (EditText) findViewById(R.id.resultat);
 
-        // quand on clique sur le bouton d'envoi
-            /*public void onClick(View v) {
-                //uneImportance = new importance();
-                //String content = gravite.getText().toString();
-                //uneImportance.setContent(content);
-            }*/
-
         sender.setOnClickListener(new OnClickListener() {            // quand on clique sur le bouton main_options
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             public void onClick(View v) {
                 JSONObject res = new JSONObject();
                 uneImportance = new importance();
-                String url = uneImportance.urlGen("create",uneImportance.getContent());     // on prépare l'url pour la requête en fonction de l'action voulue + champ écrit
+                String url = uneImportance.urlGen("create",resultat.getText().toString());     // on prépare l'url pour la requête en fonction de l'action voulue + champ écrit
                 gravite.setText(url);               // debug url
-
                 res = uneImportance.getJsonFromURL(url);       // on exécute l'action et on récup si elle fonctionne ou non (true or false)
                 uneImportance.putInObj(res);                   // le résultat va dans l'objet, j'ai modif importance pour le debug pour avoir le res sql
-                gravite.setText(uneImportance.getContent());    // on affiche true or false
+                gravite.setText(url);    // on affiche true or false
 
 
             }
