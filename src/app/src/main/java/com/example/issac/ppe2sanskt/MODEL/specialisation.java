@@ -32,7 +32,9 @@ public class specialisation extends model
 
     public void putInObj(JSONObject json) {
         try {
-            this.code = json.getString("res");                 // ici on assigne la totalité des attributs avec le résultat en JSON (ici modif pour debug req Creation)
+            this.code = json.getString("code");                 // ici on assigne la totalité des attributs avec le résultat en JSON (ici modif pour debug req Creation)
+            this.libelle = json.getString("libelle");
+            this.id = json.getInt("id");
 
         } catch (JSONException e) {
             e.printStackTrace();

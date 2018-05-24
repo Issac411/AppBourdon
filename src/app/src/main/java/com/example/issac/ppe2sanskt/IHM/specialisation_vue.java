@@ -1,5 +1,6 @@
 package com.example.issac.ppe2sanskt.IHM;
 
+import android.media.tv.TvView;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -30,14 +31,52 @@ public class specialisation_vue extends AppCompatActivity {
         String url = uneSpecialite.urlGen("read");
         JSONObject res = new JSONObject();
         res = uneSpecialite.getJsonFromURL(url);
-        JSONObject test = getOneObject(res,0);
-        ArrayList<String> trucs = JsonObjectToArray(test);
-        String size = String.valueOf(trucs.size());
-        //uneSpecialite.putInObj(res);                   // le résultat va dans l'objet, j'ai modif importance pour le debug pour avoir le res sql
-        //readAll.setText(uneSpecialite.getCode());
-        //readAll.setText(Integer.toString(tall));
-        readAll.setText(trucs.get(1).toString());
+        JSONArray test = getAllObject(res);
+        ArrayList<JSONObject> lesElements = JSONArrayToArray(test);
+        ArrayList<specialisation> lesSpecisalitions = JSONArrayToSpecialisations(lesElements);
+        readAll.setText(String.valueOf(lesSpecisalitions.get(1).getCode()));
 
+    }
+
+
+
+    protected ArrayList<JSONObject> JSONArrayToArray(JSONArray JSONArray) {
+        int count = getElementInJSONArray(JSONArray);
+        int i;
+        String codes = "";
+        JSONObject aElement = new JSONObject();
+        ArrayList<JSONObject> lesElements = new ArrayList<JSONObject>();
+        for(i=0;i<count;i++) {
+            try {
+                aElement = JSONArray.getJSONObject(i);
+                int size = getElementInJSONObject(aElement);
+                lesElements.add(aElement);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return lesElements;
+    }
+
+    protected ArrayList<specialisation> JSONArrayToSpecialisations(ArrayList<JSONObject> table) {
+        ArrayList<specialisation> lesSpecialisations = new ArrayList<specialisation>();
+        int i;
+        for(i=0;i<table.size();i++) {
+            specialisation laSpecialisation = new specialisation();
+            laSpecialisation.putInObj(table.get(i));
+            lesSpecialisations.add(laSpecialisation);
+        }
+        return lesSpecialisations;
+    }
+
+
+
+    protected int getElementInJSONArray(JSONArray json) {
+        return json.length();
+    }
+
+    protected int getElementInJSONObject(JSONObject json) {
+        return json.length();
     }
 
     protected JSONObject getOneObject(JSONObject object, int i) {
@@ -54,6 +93,20 @@ public class specialisation_vue extends AppCompatActivity {
         return element;
     }
 
+    protected String getOneStringFromJSONObject(JSONObject object, int i) {
+        ArrayList<String> jsonArray = new ArrayList<String>();
+        String element;
+        try {
+            JSONArray interior = object.getJSONArray("res");
+            String objectif = interior.getString(i);
+            element = objectif;
+        } catch (JSONException e) {
+            element = "";
+            e.printStackTrace();
+        }
+        return element;
+    }
+
     protected JSONArray getAllObject(JSONObject object) {
         ArrayList<String> jsonArray = new ArrayList<String>();
         JSONArray element;
@@ -65,27 +118,6 @@ public class specialisation_vue extends AppCompatActivity {
         }
         return element;
     }
-
-   /* protected ArrayList<String> JsonObjectToArray(JSONObject json) {
-            int id = 0;
-            String libelle = "0";
-            String code = "0";
-            try {
-                id = json.getInt("id");
-                libelle = json.getString("libelle");
-                code = json.getString("code");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            ArrayList table = new ArrayList<>();
-            table.add(String.valueOf(id));
-            table.add(String.valueOf(libelle));
-            table.add(String.valueOf(code));
-            return table;
-
-
-
-        }*/
 
     protected ArrayList<String> JsonObjectToArray(JSONObject json) {
         ArrayList table = new ArrayList<>();

@@ -27,7 +27,7 @@ import okhttp3.Response;
 public abstract class model extends config
 {
     private String table;
-    private int id;
+    protected int id;
     private String sqlRes;
 
     public void setTable(String table) {
@@ -44,6 +44,7 @@ public abstract class model extends config
 
     public model(String latable) {
         table = latable;                       // tout le monde a une table et un id en bdd
+        id = 0;
     }
 
     public String getTable() {
