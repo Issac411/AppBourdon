@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.concurrent.FutureTask;
 
 public class specialisation_vue extends AppCompatActivity {
-        TextView readAll;
+        TextView readAll; // ici code
         specialisation uneSpecialite;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,24 +30,86 @@ public class specialisation_vue extends AppCompatActivity {
         String url = uneSpecialite.urlGen("read");
         JSONObject res = new JSONObject();
         res = uneSpecialite.getJsonFromURL(url);
-        String test = specialisationArray(res);
+        JSONObject test = getOneObject(res,0);
+        ArrayList<String> trucs = JsonObjectToArray(test);
+        String size = String.valueOf(trucs.size());
         //uneSpecialite.putInObj(res);                   // le résultat va dans l'objet, j'ai modif importance pour le debug pour avoir le res sql
         //readAll.setText(uneSpecialite.getCode());
-        readAll.setText(test);
+        //readAll.setText(Integer.toString(tall));
+        readAll.setText(trucs.get(1).toString());
 
     }
 
-    protected String specialisationArray(JSONObject object) {
+    protected JSONObject getOneObject(JSONObject object, int i) {
         ArrayList<String> jsonArray = new ArrayList<String>();
-        String element = "";
+        JSONObject element;
         try {
             JSONArray interior = object.getJSONArray("res");
-            JSONObject objectif = interior.getJSONObject(0);
-            element = objectif.toString();
+            JSONObject objectif = interior.getJSONObject(i);
+            element = objectif;
         } catch (JSONException e) {
-            element = "prout";
+            element = new JSONObject();
             e.printStackTrace();
         }
         return element;
     }
+
+    protected JSONArray getAllObject(JSONObject object) {
+        ArrayList<String> jsonArray = new ArrayList<String>();
+        JSONArray element;
+        try {
+            element = object.getJSONArray("res");
+        } catch (JSONException e) {
+            element = new JSONArray();
+            e.printStackTrace();
+        }
+        return element;
+    }
+
+   /* protected ArrayList<String> JsonObjectToArray(JSONObject json) {
+            int id = 0;
+            String libelle = "0";
+            String code = "0";
+            try {
+                id = json.getInt("id");
+                libelle = json.getString("libelle");
+                code = json.getString("code");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            ArrayList table = new ArrayList<>();
+            table.add(String.valueOf(id));
+            table.add(String.valueOf(libelle));
+            table.add(String.valueOf(code));
+            return table;
+
+
+
+        }*/
+
+    protected ArrayList<String> JsonObjectToArray(JSONObject json) {
+        ArrayList table = new ArrayList<>();
+        Iterator<?> keys = json.keys();
+        while(keys.hasNext()) {
+            String key = (String)keys.next();
+            try {
+                if(json.get(key) instanceof JSONObject) {
+
+
+                } else {
+                    table.add(String.valueOf(json.get(key)));
+
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            }
+
+        return table;
+
+
+
+    }
+
 }
