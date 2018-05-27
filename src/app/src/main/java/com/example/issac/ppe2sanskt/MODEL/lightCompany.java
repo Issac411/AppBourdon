@@ -1,14 +1,8 @@
 package com.example.issac.ppe2sanskt.MODEL;
 
-import android.widget.EditText;
+import java.io.Serializable;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
-public class company extends model
-{
+public class lightCompany  implements Serializable {
     private String name;        // le texte que l'utilisateur compléte
     private String address1;
     private String address2;
@@ -23,40 +17,20 @@ public class company extends model
     private String interMail;
     private String city;
 
-    public company() {
-        super("company");
-    }
-
-    @Override
-    public void putInObj(JSONObject json) {
-        try {
-            this.name = json.getString("name");
-            this.address1 = json.getString("address1");
-            this.address2 = json.getString("address2");
-            this.pc = json.getString("pc");
-            this.num = json.getString("num");
-            this.fax = json.getString("fax");
-            this.interName = json.getString("intername");
-            this.interNickName = json.getString("internickname");
-            this.interNum = json.getString("internum");
-            this.interFax = json.getString("interfax");
-            this.mail = json.getString("mail");
-            this.interMail = json.getString("intermail");
-            this.city = json.getString("city");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public ArrayList<company> JSONArrayToCompanies(ArrayList<JSONObject> table) {
-        ArrayList<company> lesCompanies = new ArrayList<company>();
-        int i;
-        for(i=0;i<table.size();i++) {
-            company uneCompany = new company();
-            uneCompany.putInObj(table.get(i));
-            lesCompanies.add(uneCompany);
-        }
-        return lesCompanies;
+    public lightCompany(company uneCompany) {
+        this.name = uneCompany.getName();
+        this.address1 = uneCompany.getAddress1();
+        this.address2 = uneCompany.getAddress2();
+        this.pc = uneCompany.getPc();
+        this.num = uneCompany.getNum();
+        this.fax = uneCompany.getFax();
+        this.interName = uneCompany.getInterName();
+        this.interNickName = uneCompany.getInterNickName();
+        this.interNum = uneCompany.getInterNum();
+        this.interFax = uneCompany.getInterFax();
+        this.mail = uneCompany.getMail();
+        this.interMail = uneCompany.getInterMail();
+        this.city = uneCompany.getCity();
     }
 
     public String getName() {
@@ -83,14 +57,6 @@ public class company extends model
         this.address2 = address2;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public String getPc() {
         return pc;
     }
@@ -113,14 +79,6 @@ public class company extends model
 
     public void setFax(String fax) {
         this.fax = fax;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
     }
 
     public String getInterName() {
@@ -155,11 +113,27 @@ public class company extends model
         this.interFax = interFax;
     }
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
     public String getInterMail() {
         return interMail;
     }
 
     public void setInterMail(String interMail) {
         this.interMail = interMail;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }

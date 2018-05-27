@@ -60,7 +60,7 @@ Boutte/Matthieu
 Permet de gérer le CRUD pour chaque table, une fonction par table
 return un res au format Json
 */
-  public function company($act = null,$param = null,$param2 = null,$param3 = null,$param4 = null,$param5 = null,$param6 = null,$param7 = null,$param8 = null,$param9 = null,$param10 = null,$param11 = null){
+  public function company($act = null,$param = null,$param2 = null,$param3 = null,$param4 = null,$param5 = null,$param6 = null,$param7 = null,$param8 = null,$param9 = null,$param10 = null,$param11 = null,$param12 = null,$param13 = null){
         $data = array();
         switch($act){
             case "read":
@@ -74,8 +74,17 @@ return un res au format Json
                 if(!empty($param) && !empty($param2) && !empty($param3) && !empty($param4)){
                     $this->company->setName(urldecode($param));       // définition des attributs
                     $this->company->setAddress1(urldecode($param2));
-                    $this->company->setInterName(urldecode($param3));
-                    $this->company->setInterNickName(urldecode($param4));
+                    $this->company->setAddress2(urldecode($param3));
+                    $this->company->setPc(urldecode($param4));
+                    $this->company->setNum(urldecode($param5));
+                    $this->company->setFax(urldecode($param6));
+                    $this->company->setInterName(urldecode($param7));
+                    $this->company->setInterNickName(urldecode($param8));
+                    $this->company->setInterNum(urldecode($param9));
+                    $this->company->setInterFax(urldecode($param10));
+                    $this->company->setMail(urldecode($param11));
+                    $this->company->setInterMail(urldecode($param12));
+                    $this->company->setCity(urldecode($param13));
                     $data['res'] = $this->company->create();
                 }
                 break;
@@ -88,16 +97,18 @@ return un res au format Json
                 break;
             case "update":
                 if(!empty($param) && $this->company->read($param) && !empty($param2)){
-                    $this->company->setName(urldecode($param2));
-                    $this->company->setAddress1(urldecode($param3));
-                    $this->company->setAddress2(urldecode($param4));
-                    $this->company->setPc(urldecode($param5));
-                    $this->company->setNum(urldecode($param6));
-                    $this->company->setFax(urldecode($param7));
-                    $this->company->setInterName(urldecode($param8));
-                    $this->company->setInterNickName(urldecode($param9));
-                    $this->company->setInterNum(urldecode($param10));
-                    $this->company->setInterFax(urldecode($param11));
+                    $this->company->setName(urldecode($param));       // définition des attributs
+                    $this->company->setAddress1(urldecode($param2));
+                    $this->company->setAddress2(urldecode($param3));
+                    $this->company->setPc(urldecode($param4));
+                    $this->company->setNum(urldecode($param5));
+                    $this->company->setFax(urldecode($param6));
+                    $this->company->setInterName(urldecode($param7));
+                    $this->company->setInterNickName(urldecode($param8));
+                    $this->company->setInterNum(urldecode($param9));
+                    $this->company->setInterFax(urldecode($param10));
+                    $this->company->setMail(urldecode($param11));
+                    $this->company->setCity(urldecode($param12));
                     $data['res'] = $this->company->update();
                 }
                 break;

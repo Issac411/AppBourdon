@@ -5,6 +5,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,8 +29,28 @@
         <activity android:name=".IHM.user_list" />
         <activity android:name=".IHM.user_add" />
         <activity android:name=".IHM.main_options" />
-        <activity android:name=".IHM.specialisation_add" />
-        <activity android:name=".IHM.specialisation_vue"></activity>
+        <activity android:name=".IHM.specialisation.specialisation_add" />
+        <activity android:name=".IHM.specialisation.specialisation_vue" />
+        <activity android:name=".IHM.specialisation.specialisation_details" />
+        <activity android:name=".IHM.commercial_add" />
+        <activity android:name=".IHM.company.company_add" />
+        <activity android:name=".IHM.company.company_vue" />
+        <activity android:name=".IHM.company.company_details" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".IHM.company_showcase"
+            android:label="@string/title_activity_company_showcase"></activity>
     </application>
 
 </manifest>

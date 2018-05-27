@@ -21,7 +21,7 @@ public class commercial extends model {
     Permet d'assigner des attributs d'un objet avec un élément JSON
      */
 
-    protected void putInObj(JSONObject json) {
+    public void putInObj(JSONObject json) {
         try {
             this.name = json.getString("name");                 // ici on assigne la totalité des attributs avec le résultat en JSON
             this.nickName = json.getString("nickName");

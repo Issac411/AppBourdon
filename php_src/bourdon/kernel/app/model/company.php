@@ -6,13 +6,16 @@ class company extends Model
     protected $name;
     protected $address1;
     protected $address2;
+    protected $city;
     protected $pc;
     protected $num;
     protected $fax;
+    protected $mail;
     protected $interName;
     protected $interNickName;
     protected $interNum;
     protected $interFax;
+    protected $interMail;
 
     public function __construct()
     {
@@ -21,15 +24,38 @@ class company extends Model
         $this->name = null;
         $this->address1 = null;
         $this->address2 = null;
+        $this->city = null;
         $this->pc = null;
         $this->num = null;
         $this->fax = null;
+        $this->mail = null;
         $this->interName = null;
         $this->interNickName = null;
         $this->interNum = null;
         $this->interFax = null;
+        $this->interMail = null;
     }
 
+
+    /**
+     * @return mixed
+     */
+    public function getMail()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     *
+     * @return self
+     */
+    public function setMail($id)
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
 
 
     /**
@@ -248,6 +274,46 @@ class company extends Model
     public function setInterFax($interFax)
     {
         $this->interFax = $interFax;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param mixed $city
+     *
+     * @return self
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInterMail()
+    {
+        return $this->interMail;
+    }
+
+    /**
+     * @param mixed $interMail
+     *
+     * @return self
+     */
+    public function setInterMail($interMail)
+    {
+        $this->interMail = $interMail;
 
         return $this;
     }

@@ -1,6 +1,4 @@
 package com.example.issac.ppe2sanskt.MODEL;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.issac.ppe2sanskt.CONFIG.config;
 import com.example.issac.ppe2sanskt.CONFIG.HttpClient;
 
@@ -21,7 +19,6 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
 
 
 public abstract class model extends config
@@ -66,47 +63,6 @@ public abstract class model extends config
         }
 
         // pour communiquer avec la base de donnée, on doit utiliser httpclient ou okhttpclient
-
-    /*
-    07/05
-    Matthieu
-    On constitue une requête via l'url et on l'exécute pour obtenir le résultat en JSON
-     */
-    public JSONObject getJsonFromURL2(String leurl) {
-        JSONObject json = new JSONObject();
-        try {
-            OkHttpClient client = new OkHttpClient();           // intanciation du client
-            Request request = new Request.Builder().url("http://mattwork.fr/application.php").build(); // On créer la requête, on remarque que dans url, il faut mettre bah... l'url
-            client.newCall(request).enqueue(new Callback() {            // ici, on tente de faire cette action, c'est à dire d'envoyer la requête avec newCall
-                @Override
-                public void onFailure(Call call, IOException e) {       // si sa marche pas, on a le sum
-                    e.printStackTrace();
-                }
-                public void onResponse(Call call, Response response) throws IOException {       // Si sa fonctionne par contre...
-                    if (response.isSuccessful()) {                                                                          // quu'on a bien réussi à avoir une réponse lisible
-                        final String result = response.body().string();             // on récupère dans le corps de la réponse le texte
-                        try {
-                            final JSONObject json = new JSONObject(result);     // on déclare un objet en Json avec le resultat
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            });
-        } catch(Throwable e) {
-        }
-        return json;
-    }
-
-
-
-
-
-
-
-
-
-
 
 
     /*
@@ -214,6 +170,23 @@ public abstract class model extends config
             return json;
         }
     }
+
+    /* Matthieu
+    24/05/18
+    retourne un JSONOArray
+    Avec l'objet JSON passé en param, retourne le tableau qu'il contient si il en existe un sous le nom de "res"
+    */
+        public JSONArray getAllObject(JSONObject object) {
+            ArrayList<String> jsonArray = new ArrayList<String>();
+            JSONArray element;
+            try {
+                element = object.getJSONArray("res");
+            } catch (JSONException e) {
+                element = new JSONArray();
+                e.printStackTrace();
+            }
+            return element;
+        }
 
 
 }
