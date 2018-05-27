@@ -3,15 +3,16 @@ package com.example.issac.ppe2sanskt.MODEL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class specialisation extends model
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class specialisation extends model implements Serializable
 {
     private String libelle;
     private String code;
 
     public specialisation() {
         super("specialisation");
-        this.libelle = null;
-        this.code = null;
     }
 
     public String getLibelle() {
@@ -40,4 +41,21 @@ public class specialisation extends model
             e.printStackTrace();
         }
     }
+
+    /* Matthieu
+    24/05/18
+    Retourne un tableau contenant des objets specialisation
+    Permet de convertir un tableau contenant des objets JSON en specialisations
+     */
+    public ArrayList<specialisation> JSONArrayToSpecialisations(ArrayList<JSONObject> table) {
+        ArrayList<specialisation> lesSpecialisations = new ArrayList<specialisation>();
+        int i;
+        for(i=0;i<table.size();i++) {
+            specialisation laSpecialisation = new specialisation();
+            laSpecialisation.putInObj(table.get(i));
+            lesSpecialisations.add(laSpecialisation);
+        }
+        return lesSpecialisations;
+    }
+
 }

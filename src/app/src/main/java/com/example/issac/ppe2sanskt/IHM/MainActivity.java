@@ -45,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
     private Button specialisation_vue;
     private Button user_add;
     private Button specialisation_add;
+    private Button commercial_add;
+    private Button company_vue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {                // lorsque que l'activité est lancée
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         specialisation_vue = (Button) findViewById(R.id.specialisation_vue);              // Le bouton user_view est lié au bouton portant l'id "user_view"
         user_add = (Button) findViewById(R.id.user_add);                // ... ^
         specialisation_add = (Button) findViewById(R.id.specialisation_add);        //
+        commercial_add = (Button) findViewById(R.id.commercial_add);
+        company_vue = (Button) findViewById(R.id.company_vue);
 
 
 
@@ -82,6 +87,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        commercial_add.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                switchTo_commercial_add();
+            }
+        });
+
+        company_vue.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                switchTo_company_vue();
+            }
+        });
+
 
 
     }
@@ -97,6 +114,7 @@ activity (this) to (user_list)
     }
     public void switchTo_user_add() {
         Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.user_add.class);
+        //Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.company_showcase.class);
         startActivity(intent);
     }
 
@@ -106,12 +124,23 @@ activity (this) to (user_list)
     }
 
     public void switchTo_specialisation_add() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation_add.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation.specialisation_add.class);
         startActivity(intent);
     }
 
     public void switchTo_specialisation_vue() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation_vue.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation.specialisation_vue.class);
+        startActivity(intent);
+    }
+
+    public void switchTo_commercial_add() {
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.commercial_add.class);
+        startActivity(intent);
+    }
+
+
+    public void switchTo_company_vue() {
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.company.company_vue.class);
         startActivity(intent);
     }
 
