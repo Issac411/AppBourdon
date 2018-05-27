@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.issac.ppe2sanskt.IHM.company.company_vue;
+import com.example.issac.ppe2sanskt.IHM.company.Company_vue;
 import com.example.issac.ppe2sanskt.MODEL.Specialisation;
 import com.example.issac.ppe2sanskt.MODEL.Specialisation;
 import com.example.issac.ppe2sanskt.R;
@@ -42,7 +42,7 @@ public class Specialisation_add extends AppCompatActivity {
                 specialisationLibelle.setText(url);               // debug url
                 res = uneSpecialisation.getJsonFromURL(url);       // on exécute l'action et on récup si elle fonctionne ou non (true or false)
                 uneSpecialisation.putInObj(res);                   // le résultat va dans l'objet, j'ai modif importance pour le debug pour avoir le res sql
-                Intent intent = new Intent(getApplicationContext(), company_vue.class);          // Pour sa on la loge dans une classe légère compatible avec le                 // "serializable"
+                Intent intent = new Intent(getApplicationContext(), Company_vue.class);          // Pour sa on la loge dans une classe légère compatible avec le                 // "serializable"
                 startActivity(intent);
 
 

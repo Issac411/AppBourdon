@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.example.issac.ppe2sanskt.R;
 
-public class specialisation_details extends AppCompatActivity {
+public class Specialisation_details extends AppCompatActivity {
     TextView specialisationId;
     TextView specialisationLibelle;
     String var_specialisationLibelle = "";

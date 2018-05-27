@@ -1,5 +1,5 @@
 package com.example.issac.ppe2sanskt.MODEL;
-import com.example.issac.ppe2sanskt.CONFIG.config;
+import com.example.issac.ppe2sanskt.CONFIG.Config;
 import com.example.issac.ppe2sanskt.CONFIG.HttpClient;
 
 
@@ -21,7 +21,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-public abstract class Model extends config
+public abstract class Model extends Config
 {
     private String table;
     protected int id;
@@ -49,7 +49,7 @@ public abstract class Model extends config
     }
     // mise en place du système CRUD
 
-        protected boolean read(int id) {
+    protected boolean read(int id) {
         JSONObject json; // les données PHP seront encodés en JSON, du coup, on se prépare à le recevoir dans une variable du genre
         boolean res = false;
         /*json = getJsonFromURL(config.getUrl()+this.table+"/read/"+ id);     // on build l'url, on prend le début dans config, puis le nom variable de la table (trouvé des enfants) + l'id recherché
@@ -59,10 +59,10 @@ public abstract class Model extends config
             } else {
                 res = false;
             }*/
-            return res;
-        }
+        return res;
+    }
 
-        // pour communiquer avec la base de donnée, on doit utiliser httpclient ou okhttpclient
+    // pour communiquer avec la base de donnée, on doit utiliser httpclient ou okhttpclient
 
 
     /*
@@ -105,7 +105,7 @@ public abstract class Model extends config
      */
     public String urlGen(String action, String... params ) {
         int i;
-        String url = "http://"+config.getUrl()+"Database/"+this.table+"/"+action;
+        String url = "http://"+Config.getUrl()+"Database/"+this.table+"/"+action;
         for(i = 0;i < params.length;i++) {
             url = url+"/"+params[i];
 
@@ -176,17 +176,17 @@ public abstract class Model extends config
     retourne un JSONOArray
     Avec l'objet JSON passé en param, retourne le tableau qu'il contient si il en existe un sous le nom de "res"
     */
-        public JSONArray getAllObject(JSONObject object) {
-            ArrayList<String> jsonArray = new ArrayList<String>();
-            JSONArray element;
-            try {
-                element = object.getJSONArray("res");
-            } catch (JSONException e) {
-                element = new JSONArray();
-                e.printStackTrace();
-            }
-            return element;
+    public JSONArray getAllObject(JSONObject object) {
+        ArrayList<String> jsonArray = new ArrayList<String>();
+        JSONArray element;
+        try {
+            element = object.getJSONArray("res");
+        } catch (JSONException e) {
+            element = new JSONArray();
+            e.printStackTrace();
         }
+        return element;
+    }
 
 
 }

@@ -15,7 +15,7 @@ import com.example.issac.ppe2sanskt.MODEL.LightSpecialisation;
 
 import com.example.issac.ppe2sanskt.MODEL.Model;
 import com.example.issac.ppe2sanskt.MODEL.rows.SimpleRow;
-import com.example.issac.ppe2sanskt.MODEL.rows.simpleRowAdapter;
+import com.example.issac.ppe2sanskt.MODEL.rows.SimpleRowAdapter;
 import com.example.issac.ppe2sanskt.MODEL.Specialisation;
 import com.example.issac.ppe2sanskt.R;
 
@@ -60,7 +60,7 @@ public class Specialisation_vue extends AppCompatActivity implements JSONAct {
 
 
 
-        simpleRowAdapter adapter = new simpleRowAdapter(Specialisation_vue.this,rows);          // affichage de la liste
+        SimpleRowAdapter adapter = new SimpleRowAdapter(Specialisation_vue.this,rows);          // affichage de la liste
         mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {            // si on clique sur un élément
@@ -82,7 +82,7 @@ public class Specialisation_vue extends AppCompatActivity implements JSONAct {
                     i++;
                 }
                 LightSpecialisation specilisation_exported = new LightSpecialisation(laSpecialisation);     // on passe cette spécialisation dans la prochaine activité
-                Intent intent = new Intent(getApplicationContext(), specialisation_details.class);          // Pour sa on la loge dans une classe légère compatible avec le
+                Intent intent = new Intent(getApplicationContext(), Specialisation_details.class);          // Pour sa on la loge dans une classe légère compatible avec le
                 intent.putExtra("specilisation_exported", specilisation_exported);                   // "serializable"
                 startActivity(intent);
             }

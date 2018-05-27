@@ -124,7 +124,7 @@ activity (this) to (user_list)
     }
 
     public void switchTo_specialisation_add() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation.specialisation_add.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation.Specialisation_add.class);
         startActivity(intent);
     }
 
@@ -140,7 +140,7 @@ activity (this) to (user_list)
 
 
     public void switchTo_company_vue() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.company.company_vue.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.company.Company_vue.class);
         startActivity(intent);
     }
 

@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 
 import com.example.issac.ppe2sanskt.CONFIG.HttpClient;
-import com.example.issac.ppe2sanskt.CONFIG.config;
 import com.example.issac.ppe2sanskt.MODEL.Importance;
 import com.example.issac.ppe2sanskt.MODEL.Model;
 import com.example.issac.ppe2sanskt.R;

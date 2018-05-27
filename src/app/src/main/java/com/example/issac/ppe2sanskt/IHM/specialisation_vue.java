@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.issac.ppe2sanskt.MODEL.specialisation;
+import com.example.issac.ppe2sanskt.MODEL.Specialisation;
 import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONArray;
@@ -28,7 +28,7 @@ import java.util.concurrent.FutureTask;
 public class specialisation_vue extends AppCompatActivity {
         ListView mListView;
         TextView selected;
-        specialisation uneSpecialite;
+        Specialisation uneSpecialite;
         ArrayList<String> lesLibelles = new ArrayList<String>();
         ArrayList<String> lesIds = new ArrayList<String>();
 
@@ -43,12 +43,12 @@ public class specialisation_vue extends AppCompatActivity {
         JSONObject res;
         int i;
 
-        uneSpecialite = new specialisation();
+        uneSpecialite = new Specialisation();
         String url = uneSpecialite.urlGen("read");      // on produit une requête de lecture de toutes les spécialités car il n'y a que read, pas de params en plus
         res = uneSpecialite.getJsonFromURL(url);               // avec la requête en url, on récupére dans un JSON le résultat
         JSONArray test = getAllObject(res);                    // le tableau JSON dans l'objet JSON est récupéré
         ArrayList<JSONObject> lesElements = JSONArrayToArray(test);     // On transforme le JSONArray en array tout court
-        ArrayList<specialisation> lesSpecialisations = uneSpecialite.JSONArrayToSpecialisations(lesElements);     // le Array ne contient plus du JSON mais des objets
+        ArrayList<Specialisation> lesSpecialisations = uneSpecialite.JSONArrayToSpecialisations(lesElements);     // le Array ne contient plus du JSON mais des objets
 
 
         for(i = 0; i < lesSpecialisations.size();i++) {
@@ -80,7 +80,7 @@ public class specialisation_vue extends AppCompatActivity {
                     }
                     i++;
                 }
-                Intent intent = new Intent(getApplicationContext(), specialisation_details.class);
+                Intent intent = new Intent(getApplicationContext(), Specialisation_details.class);
                 intent.putExtra("specialisationLibelle",theString);
                 intent.putExtra("specialisationId",specialisationId);
                 startActivity(intent);

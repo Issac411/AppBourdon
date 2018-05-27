@@ -18,7 +18,7 @@ import com.example.issac.ppe2sanskt.MODEL.LightCompany;
 import com.example.issac.ppe2sanskt.MODEL.Company;
 import com.example.issac.ppe2sanskt.MODEL.LightCompany;
 import com.example.issac.ppe2sanskt.MODEL.rows.SimpleRow;
-import com.example.issac.ppe2sanskt.MODEL.rows.simpleRowAdapter;
+import com.example.issac.ppe2sanskt.MODEL.rows.SimpleRowAdapter;
 import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONArray;
@@ -57,7 +57,7 @@ public class Company_vue extends AppCompatActivity {
             int color = rand.nextInt();
             rows.add(new SimpleRow(color, lesCompanies.get(i).getName(), lesCompanies.get(i).getInterName() + " " + lesCompanies.get(i).getInterNickName() + " [" + lesCompanies.get(i).getNum() + "]"));
         }
-        simpleRowAdapter adapter = new simpleRowAdapter(Company_vue.this, rows);          // affichage de la liste
+        SimpleRowAdapter adapter = new SimpleRowAdapter(Company_vue.this, rows);          // affichage de la liste
         mListView.setAdapter(adapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {            // si on clique sur un élément
 
@@ -105,7 +105,7 @@ public class Company_vue extends AppCompatActivity {
 
 
     public void switchTo_company_add() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.company.company_add.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.company.Company_add.class);
         startActivity(intent);
     }
 }

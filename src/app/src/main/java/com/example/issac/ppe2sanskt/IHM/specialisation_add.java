@@ -7,14 +7,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.issac.ppe2sanskt.MODEL.specialisation;
+import com.example.issac.ppe2sanskt.MODEL.Specialisation;
 import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONObject;
 
 public class specialisation_add extends AppCompatActivity {
 
-    private specialisation uneSpecialisation;
+    private Specialisation uneSpecialisation;
     private Button creation;
     private TextView specialisationLibelle;         // le texte non éditable
     private TextView specialisationCode;
@@ -34,7 +34,7 @@ public class specialisation_add extends AppCompatActivity {
         creation.setOnClickListener(new View.OnClickListener() {            // quand on clique sur le bouton main_options
             public void onClick(View v) {
                 JSONObject res = new JSONObject();
-                uneSpecialisation = new specialisation();
+                uneSpecialisation = new Specialisation();
                 String url = uneSpecialisation.urlGen("create",specialisationLibelleField.getText().toString(),specialisationCodeField.getText().toString());     // on prépare l'url pour la requête en fonction de l'action voulue + champ écrit
                 specialisationLibelle.setText(url);               // debug url
                 res = uneSpecialisation.getJsonFromURL(url);       // on exécute l'action et on récup si elle fonctionne ou non (true or false)
