@@ -9,15 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.issac.ppe2sanskt.MODEL.rows.SimpleRow;
-import com.example.issac.ppe2sanskt.MODEL.rows.rowViewHolder;
 import com.example.issac.ppe2sanskt.R;
 
 import java.util.List;
 
-public class simpleRowAdapter extends ArrayAdapter<SimpleRow> {
+public class SimpleRowAdapter extends ArrayAdapter<SimpleRow> {
     //tweets est la liste des models à afficher
-    public simpleRowAdapter(Context context, List<SimpleRow> tweets) {
+    public SimpleRowAdapter(Context context, List<SimpleRow> tweets) {
         super(context, 0, tweets);
     }
 
@@ -28,9 +26,9 @@ public class simpleRowAdapter extends ArrayAdapter<SimpleRow> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_element, parent, false);
         }
 
-        rowViewHolder viewHolder = (rowViewHolder) convertView.getTag();
+        RowViewHolder viewHolder = (RowViewHolder) convertView.getTag();
         if (viewHolder == null) {
-            viewHolder = new rowViewHolder();
+            viewHolder = new RowViewHolder();
             viewHolder.name = (TextView) convertView.findViewById(R.id.name);
             viewHolder.desc = (TextView) convertView.findViewById(R.id.desc);
             viewHolder.color = (ImageView) convertView.findViewById(R.id.color);

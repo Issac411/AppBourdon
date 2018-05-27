@@ -9,8 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.issac.ppe2sanskt.MODEL.commercial;
-import com.example.issac.ppe2sanskt.MODEL.company;
+import com.example.issac.ppe2sanskt.MODEL.Company;
 import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONObject;
@@ -22,8 +21,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class company_add extends AppCompatActivity {
-    private company uneCompany;
+public class Company_add extends AppCompatActivity {
+    private Company uneCompany;
     private Button creation;
     private TextView companyName;         // le texte non éditable
     private TextView companyAddress1;
@@ -82,7 +81,7 @@ public class company_add extends AppCompatActivity {
                 @Override
                 public void onClick (View v){
                 JSONObject res = new JSONObject();
-                uneCompany = new company();
+                uneCompany = new Company();
                 String urle = uneCompany.urlGen("create", companyNameField.getText().toString(),
                         companyAddress1_field.getText().toString(),
                         companyAddress2_field.getText().toString(),

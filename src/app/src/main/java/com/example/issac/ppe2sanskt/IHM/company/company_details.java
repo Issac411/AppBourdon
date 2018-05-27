@@ -8,11 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.issac.ppe2sanskt.MODEL.lightCompany;
-import com.example.issac.ppe2sanskt.MODEL.lightSpecialisation;
+import com.example.issac.ppe2sanskt.MODEL.LightCompany;
 import com.example.issac.ppe2sanskt.R;
 
-public class company_details extends AppCompatActivity {
+public class Company_details extends AppCompatActivity {
     TextView companyName;
     TextView companyAddress1;
     TextView companyAddress2;
@@ -22,10 +21,8 @@ public class company_details extends AppCompatActivity {
     TextView companyInterName_NickName;
     TextView companyInterNum;
     TextView companyInterMail;
-
-
-
     Button goToMap;
+    Button entry_add;
 
 
     @Override
@@ -42,12 +39,11 @@ public class company_details extends AppCompatActivity {
         companyInterName_NickName = (TextView) findViewById(R.id.companyInterName_NickName);
         companyInterNum = (TextView) findViewById(R.id.companyInterNum);
         companyInterMail = (TextView) findViewById(R.id.companyInterMail);
-
-
-
+        entry_add = (Button) findViewById(R.id.entry_add);
         goToMap = (Button) findViewById(R.id.goToMap);
 
-        lightCompany imported = (lightCompany) intent.getSerializableExtra("lightCompany_exported");
+
+        LightCompany imported = (LightCompany) intent.getSerializableExtra("lightCompany_exported");
         companyName.setText(Html.fromHtml("<b>Nom : "+imported.getName().toString()+"</b>"));
         companyAddress1.setText(Html.fromHtml("<b>Adresse 1 : "+imported.getAddress1().toString()+"</b>"));
         companyAddress2.setText(Html.fromHtml("<b>Complément : "+imported.getAddress2().toString()+"</b>"));
@@ -67,6 +63,13 @@ public class company_details extends AppCompatActivity {
         });
 
 
+        entry_add.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                switchToEntry_add();
+            }
+        });
+
+
 
 
     }
@@ -74,9 +77,13 @@ public class company_details extends AppCompatActivity {
 
 
     public void switchTo_map() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.company_showcase.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.Company_showcase.class);
         startActivity(intent);
     }
 
+    public void switchToEntry_add() {
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.Company_showcase.class);
+        startActivity(intent);
+    }
 
 }

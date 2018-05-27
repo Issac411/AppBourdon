@@ -1,6 +1,6 @@
 package com.example.issac.ppe2sanskt.MODEL;
 
-public class practiced
+public class Practiced
 {
     
 }

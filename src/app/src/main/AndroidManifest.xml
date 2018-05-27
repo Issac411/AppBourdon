@@ -50,7 +50,9 @@
 
         <activity
             android:name=".IHM.company_showcase"
-            android:label="@string/title_activity_company_showcase"></activity>
+            android:label="@string/title_activity_company_showcase" />
+        <activity android:name=".IHM.entry.entry_add" />
+        <activity android:name=".IHM.entry.entry_addSelectCompany"></activity>
     </application>
 
 </manifest>

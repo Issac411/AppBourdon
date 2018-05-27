@@ -3,7 +3,7 @@ package com.example.issac.ppe2sanskt.MODEL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class commercial extends model {
+public class Commercial extends Model {
     private String name;
     private String nickName;
     private String address1;
@@ -11,7 +11,7 @@ public class commercial extends model {
     private String pc;
     private String city;
 
-    public commercial() {
+    public Commercial() {
         super("commercial");            // on déclare le nom de la table
     }
 
@@ -34,6 +34,5 @@ public class commercial extends model {
         }
 
     }
-
 
 }

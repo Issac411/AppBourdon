@@ -11,12 +11,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import java.util.Random;
 import com.example.issac.ppe2sanskt.CONFIG.JSONAct;
-import com.example.issac.ppe2sanskt.MODEL.lightSpecialisation;
+import com.example.issac.ppe2sanskt.MODEL.LightSpecialisation;
 
-import com.example.issac.ppe2sanskt.MODEL.model;
+import com.example.issac.ppe2sanskt.MODEL.Model;
 import com.example.issac.ppe2sanskt.MODEL.rows.SimpleRow;
 import com.example.issac.ppe2sanskt.MODEL.rows.simpleRowAdapter;
-import com.example.issac.ppe2sanskt.MODEL.specialisation;
+import com.example.issac.ppe2sanskt.MODEL.Specialisation;
 import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONArray;
@@ -26,11 +26,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class specialisation_vue extends AppCompatActivity implements JSONAct {
-        ListView mListView;
-        TextView selected;
-        specialisation uneSpecialite;
-        ArrayList<specialisation> lesSpecialisations = new ArrayList<specialisation>();
+public class Specialisation_vue extends AppCompatActivity implements JSONAct {
+    ListView mListView;
+    TextView selected;
+    Specialisation uneSpecialite;
+    ArrayList<Specialisation> lesSpecialisations = new ArrayList<Specialisation>();
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -45,7 +45,7 @@ public class specialisation_vue extends AppCompatActivity implements JSONAct {
         JSONObject res;
         int i;
 
-        uneSpecialite = new specialisation();
+        uneSpecialite = new Specialisation();
         String url = uneSpecialite.urlGen("read");      // on produit une requête de lecture de toutes les spécialités car il n'y a que read, pas de params en plus
         res = uneSpecialite.getJsonFromURL(url);               // avec la requête en url, on récupére dans un JSON le résultat
         JSONArray test = uneSpecialite.getAllObject(res);                    // le tableau JSON dans l'objet JSON est récupéré
@@ -60,7 +60,7 @@ public class specialisation_vue extends AppCompatActivity implements JSONAct {
 
 
 
-        simpleRowAdapter adapter = new simpleRowAdapter(specialisation_vue.this,rows);          // affichage de la liste
+        simpleRowAdapter adapter = new simpleRowAdapter(Specialisation_vue.this,rows);          // affichage de la liste
         mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {            // si on clique sur un élément
@@ -70,10 +70,10 @@ public class specialisation_vue extends AppCompatActivity implements JSONAct {
                 SimpleRow selectedRow = (SimpleRow)mListView.getItemAtPosition(position);               // on retrouve la row cliquée
                 boolean found = false;
                 int i = 0;
-                specialisation laSpecialisation = new specialisation();
+                Specialisation laSpecialisation = new Specialisation();
                 while(!found) {                                                     // On cherche à quelle spécialisation elle fait référence
                     if(i == lesSpecialisations.size()) {
-                       found = true;
+                        found = true;
                     }
                     if(lesSpecialisations.get(i).getLibelle() == selectedRow.getName()) {
                         laSpecialisation = lesSpecialisations.get(i);
@@ -81,7 +81,7 @@ public class specialisation_vue extends AppCompatActivity implements JSONAct {
                     }
                     i++;
                 }
-                lightSpecialisation specilisation_exported = new lightSpecialisation(laSpecialisation);     // on passe cette spécialisation dans la prochaine activité
+                LightSpecialisation specilisation_exported = new LightSpecialisation(laSpecialisation);     // on passe cette spécialisation dans la prochaine activité
                 Intent intent = new Intent(getApplicationContext(), specialisation_details.class);          // Pour sa on la loge dans une classe légère compatible avec le
                 intent.putExtra("specilisation_exported", specilisation_exported);                   // "serializable"
                 startActivity(intent);

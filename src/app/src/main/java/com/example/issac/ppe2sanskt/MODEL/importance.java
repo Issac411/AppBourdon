@@ -4,11 +4,11 @@ package com.example.issac.ppe2sanskt.MODEL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class importance extends model
+public class Importance extends Model
 {
     private String content;
 
-    public importance() {
+    public Importance() {
         super("importance");
         this.content = null;
     }

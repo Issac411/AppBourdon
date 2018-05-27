@@ -6,12 +6,12 @@ import org.json.JSONObject;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class specialisation extends model implements Serializable
+public class Specialisation extends Model implements Serializable
 {
     private String libelle;
     private String code;
 
-    public specialisation() {
+    public Specialisation() {
         super("specialisation");
     }
 
@@ -47,11 +47,11 @@ public class specialisation extends model implements Serializable
     Retourne un tableau contenant des objets specialisation
     Permet de convertir un tableau contenant des objets JSON en specialisations
      */
-    public ArrayList<specialisation> JSONArrayToSpecialisations(ArrayList<JSONObject> table) {
-        ArrayList<specialisation> lesSpecialisations = new ArrayList<specialisation>();
+    public ArrayList<Specialisation> JSONArrayToSpecialisations(ArrayList<JSONObject> table) {
+        ArrayList<Specialisation> lesSpecialisations = new ArrayList<Specialisation>();
         int i;
         for(i=0;i<table.size();i++) {
-            specialisation laSpecialisation = new specialisation();
+            Specialisation laSpecialisation = new Specialisation();
             laSpecialisation.putInObj(table.get(i));
             lesSpecialisations.add(laSpecialisation);
         }

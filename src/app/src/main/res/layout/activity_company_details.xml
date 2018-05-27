@@ -67,16 +67,17 @@
                 android:layout_height="wrap_content"
                 android:text="TextView" />
 
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapView"
-                android:layout_width="match_parent"
-                android:layout_height="333dp" />
-
             <Button
                 android:id="@+id/goToMap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Localiser" />
+
+            <Button
+                android:id="@+id/entry_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
 
         </LinearLayout>
     </LinearLayout>

@@ -46,7 +46,7 @@ import okhttp3.Response;
 
 
 
-public class user_list extends AppCompatActivity {
+public class User_list extends AppCompatActivity {
 
     private TextView mTextViewResult;   // c'est là dedans qu'il y aura notre reception
 
@@ -60,7 +60,7 @@ public class user_list extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();           // intanciation du client
 
         String url = "http://mattwork.fr/application.php?group=utilisateur&id=N&element=prenom";  // le site sur lequel on va récupérer nos données -> [D'ailleurs, je pense que pour avoir des données spécifiques (genre un user avec tel ID
-                                                                                                            //    on pourrait juste rajouter un $_GET genre "...?ID=2"
+        //    on pourrait juste rajouter un $_GET genre "...?ID=2"
 
         Request request = new Request.Builder()     // On créer la requête, on remarque que dans url, il faut mettre bah... l'url
                 .url(url)
@@ -77,8 +77,8 @@ public class user_list extends AppCompatActivity {
                 if (response.isSuccessful()) {                                                                          // quu'on a bien réussi à avoir une réponse lisible
                     final String Response = response.body().string();             // on récupère dans le corps de la réponse le texte
 
-                    user_list.this.runOnUiThread(new Runnable() {       // Ce lance en background
-                                                                        // déjà existant dans user_list, bien que mettre autre chose que l'activité courante ne fonctionne pas.
+                    User_list.this.runOnUiThread(new Runnable() {       // Ce lance en background
+                        // déjà existant dans user_list, bien que mettre autre chose que l'activité courante ne fonctionne pas.
                         @Override
                         public void run() {
                             mTextViewResult.setText(Response);        // assignation du texte

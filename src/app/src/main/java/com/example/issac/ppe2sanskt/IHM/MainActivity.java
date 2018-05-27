@@ -109,17 +109,17 @@ Procedure qui permet de changer d'activité, passe de l'activité courante à la
 activity (this) to (user_list)
 */
     public void switchTo_user_list() {
-        Intent intent = new Intent(this, user_list.class);// le jump par d'ici pour aller sur user_list, par exemple
+        Intent intent = new Intent(this, User_list.class);// le jump par d'ici pour aller sur user_list, par exemple
         startActivity(intent);                                          // on saute
     }
     public void switchTo_user_add() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.user_add.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.User_add.class);
         //Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.company_showcase.class);
         startActivity(intent);
     }
 
     public void switchTo_main_options() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.main_options.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.Main_options.class);
         startActivity(intent);
     }
 
@@ -129,12 +129,12 @@ activity (this) to (user_list)
     }
 
     public void switchTo_specialisation_vue() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation.specialisation_vue.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.specialisation.Specialisation_vue.class);
         startActivity(intent);
     }
 
     public void switchTo_commercial_add() {
-        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.commercial_add.class);
+        Intent intent = new Intent(this, com.example.issac.ppe2sanskt.IHM.Commercial_add.class);
         startActivity(intent);
     }
 

@@ -8,14 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.issac.ppe2sanskt.MODEL.commercial;
-import com.example.issac.ppe2sanskt.MODEL.specialisation;
+import com.example.issac.ppe2sanskt.MODEL.Commercial;
+import com.example.issac.ppe2sanskt.MODEL.Specialisation;
 import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONObject;
 
-public class commercial_add extends AppCompatActivity {
-    private commercial unCommercial;
+public class Commercial_add extends AppCompatActivity {
+    private Commercial unCommercial;
     private Button creation;
     private TextView commercialNickName;         // le texte non éditable
     private TextView commercialName;
@@ -49,7 +49,7 @@ public class commercial_add extends AppCompatActivity {
             @Override
             public void onClick (View v){
             JSONObject res = new JSONObject();
-            unCommercial = new commercial();
+            unCommercial = new Commercial();
             String url = unCommercial.urlGen("create", commercialNickNameField.getText().toString(),
                     commercialNameField.getText().toString(),
                     commercialAddress1Field.getText().toString(),

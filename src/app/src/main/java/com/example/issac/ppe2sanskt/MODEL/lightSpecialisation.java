@@ -2,12 +2,12 @@ package com.example.issac.ppe2sanskt.MODEL;
 
 import java.io.Serializable;
 
-public class lightSpecialisation implements Serializable {
+public class LightSpecialisation implements Serializable {
     private String libelle;
     private String code;
     private int id;
 
-    public lightSpecialisation(specialisation uneSpecialisation) {
+    public LightSpecialisation(Specialisation uneSpecialisation) {
         this.libelle = uneSpecialisation.getLibelle();
         this.code = uneSpecialisation.getCode();
         this.id = uneSpecialisation.getId();

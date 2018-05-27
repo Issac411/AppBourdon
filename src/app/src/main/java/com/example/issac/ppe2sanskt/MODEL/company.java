@@ -7,7 +7,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class company extends model
+public class Company extends Model
 {
     private String name;        // le texte que l'utilisateur compléte
     private String address1;
@@ -23,7 +23,7 @@ public class company extends model
     private String interMail;
     private String city;
 
-    public company() {
+    public Company() {
         super("company");
     }
 
@@ -48,11 +48,11 @@ public class company extends model
         }
     }
 
-    public ArrayList<company> JSONArrayToCompanies(ArrayList<JSONObject> table) {
-        ArrayList<company> lesCompanies = new ArrayList<company>();
+    public ArrayList<Company> JSONArrayToCompanies(ArrayList<JSONObject> table) {
+        ArrayList<Company> lesCompanies = new ArrayList<Company>();
         int i;
         for(i=0;i<table.size();i++) {
-            company uneCompany = new company();
+            Company uneCompany = new Company();
             uneCompany.putInObj(table.get(i));
             lesCompanies.add(uneCompany);
         }

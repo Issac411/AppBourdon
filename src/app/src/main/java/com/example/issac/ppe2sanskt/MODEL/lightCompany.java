@@ -2,7 +2,7 @@ package com.example.issac.ppe2sanskt.MODEL;
 
 import java.io.Serializable;
 
-public class lightCompany  implements Serializable {
+public class LightCompany  implements Serializable {
     private String name;        // le texte que l'utilisateur compléte
     private String address1;
     private String address2;
@@ -17,7 +17,7 @@ public class lightCompany  implements Serializable {
     private String interMail;
     private String city;
 
-    public lightCompany(company uneCompany) {
+    public LightCompany(Company uneCompany) {
         this.name = uneCompany.getName();
         this.address1 = uneCompany.getAddress1();
         this.address2 = uneCompany.getAddress2();

@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.issac.ppe2sanskt.MODEL.Person;
-import com.example.issac.ppe2sanskt.MODEL.lightSpecialisation;
-import com.example.issac.ppe2sanskt.MODEL.specialisation;
+import com.example.issac.ppe2sanskt.MODEL.LightSpecialisation;
+import com.example.issac.ppe2sanskt.MODEL.LightSpecialisation;
+import com.example.issac.ppe2sanskt.MODEL.Specialisation;
 import com.example.issac.ppe2sanskt.R;
 
-public class specialisation_details extends AppCompatActivity {
+public class Specialisation_details extends AppCompatActivity {
     TextView specialisationId;
     TextView specialisationLibelle;
     String var_specialisationLibelle = "";
@@ -25,7 +25,7 @@ public class specialisation_details extends AppCompatActivity {
         Intent intent = getIntent();
         //Person Person = (Person) intent.getSerializableExtra("Person");
 
-        lightSpecialisation specilisation_exported = (lightSpecialisation) intent.getSerializableExtra("specilisation_exported");
+        LightSpecialisation specilisation_exported = (LightSpecialisation) intent.getSerializableExtra("specilisation_exported");
             specialisationId.setText(specilisation_exported.getCode().toString());
             specialisationLibelle.setText(specilisation_exported.getLibelle().toString());
 
