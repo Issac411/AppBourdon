@@ -1,0 +1,65 @@
+create table specialisation(
+	id SERIAL,
+	code varchar(20),
+	libelle varchar(200) NOT NULL,
+	CONSTRAINT pk_specialisation PRIMARY KEY (id)
+)
+
+create table importance(
+	id SERIAL,
+	content varchar(50),
+	CONSTRAINT pk_importance PRIMARY KEY (id)
+)
+
+create table company(
+    id SERIAL,	
+    name varchar(500) NOT NULL,
+    address1 varchar(500) NOT NULL,
+    address2 varchar(500),
+	city varchar(50) NOT NULL,
+    pc varchar(5) NOT NULL,
+	mail varchar(100),
+    num varchar(10),
+    fax varchar(10),
+    intername varchar(200),
+    internickname varchar(200),
+	intermail varchar(100),
+    interNum varchar(11),
+    interFax varchar(11),
+    CONSTRAINT pk_company PRIMARY KEY (id)
+)
+
+create table commercial(
+	id SERIAL,
+	nickName varchar(500) NOT NULL,
+    name varchar(500) NOT NULL,
+    address1 varchar(500) NOT NULL,
+    address2 varchar(500) NOT NULL,
+	city varchar(50) NOT NULL,
+    pc varchar(5) NOT NULL,
+	CONSTRAINT pk_commercial PRIMARY KEY (id)
+)
+
+create table entry(
+	id SERIAL,
+	idcompany int,
+    idcommercial int,
+	idimportance int,
+    date timestamp NOT NULL,
+    comment varchar(500) NOT NULL,
+    duration int NOT NULL,
+    status varchar(300),
+    CONSTRAINT pk_entry PRIMARY KEY (id),
+    CONSTRAINT fk_idCompany FOREIGN KEY (idCompany) REFERENCES company (id),
+    CONSTRAINT fk_idCommercial FOREIGN KEY (idCommercial) REFERENCES commercial (id),
+	CONSTRAINT fk_idImportance FOREIGN KEY (idimportance) REFERENCES importance (id)
+)
+
+create table practiced(
+	id SERIAL,
+	idspecialiation int,
+    idcompany int,
+    CONSTRAINT fk_idspecialisation FOREIGN KEY (idSpecialiation) REFERENCES specialisation (id),
+    CONSTRAINT fk_idcompany FOREIGN KEY (idCompany) REFERENCES company (id),
+    CONSTRAINT pk_practiced PRIMARY KEY (id)
+)
