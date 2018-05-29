@@ -19,23 +19,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.issac.myapplication.IHM.MainActivity">
+        <activity android:name=".IHM.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.issac.myapplication.IHM.User_list" />
-        <activity android:name="com.example.issac.myapplication.IHM.User_add" />
-        <activity android:name="com.example.issac.myapplication.IHM.Main_options" />
-        <activity android:name="com.example.issac.myapplication.IHM.specialisation.Specialisation_add" />
-        <activity android:name="com.example.issac.myapplication.IHM.specialisation.Specialisation_vue" />
-        <activity android:name="com.example.issac.myapplication.IHM.specialisation.Specialisation_details" />
-        <activity android:name="com.example.issac.myapplication.IHM.Commercial_add" />
-        <activity android:name="com.example.issac.myapplication.IHM.company.Company_add" />
-        <activity android:name="com.example.issac.myapplication.IHM.company.Company_vue" />
-        <activity android:name="com.example.issac.myapplication.IHM.company.Company_details" />
+        <activity android:name=".IHM.User_list" />
+        <activity android:name=".IHM.User_add" />
+        <activity android:name=".IHM.Main_options" />
+        <activity android:name=".IHM.specialisation.Specialisation_add" />
+        <activity android:name=".IHM.specialisation.Specialisation_vue" />
+        <activity android:name=".IHM.specialisation.Specialisation_details" />
+        <activity android:name=".IHM.Commercial_add" />
+        <activity android:name=".IHM.company.Company_add" />
+        <activity android:name=".IHM.company.Company_vue" />
+        <activity android:name=".IHM.company.Company_details" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -49,9 +49,9 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.example.issac.myapplication.IHM.MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name="com.example.issac.myapplication.IHM.company.Company_edit"></activity>
+            android:name=".IHM.Company_showcase"
+            android:label="@string/title_activity_company_showcase" />
+        <activity android:name=".IHM.Entry.Entry_add"></activity>
     </application>
 
 </manifest>
