@@ -27,6 +27,7 @@ public class Company_details extends AppCompatActivity {
     private TextView companyInterNum;
     private TextView companyInterMail;
     private Button suppression;
+    private Button edit;
 
 
 
@@ -48,7 +49,7 @@ public class Company_details extends AppCompatActivity {
         companyInterNum = (TextView) findViewById(R.id.companyInterNum);
         companyInterMail = (TextView) findViewById(R.id.companyInterMail);
         suppression = (Button) findViewById(R.id.suppression);
-
+        edit = (Button) findViewById(R.id.edit);
 
 
         goToMap = (Button) findViewById(R.id.goToMap);
@@ -74,10 +75,15 @@ public class Company_details extends AppCompatActivity {
 
         suppression.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                deleteCompany(imported.getId());
+                deleteCompany(imported.getStringId());
             }
         });
 
+        edit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                editCompany(imported);
+            }
+        });
 
 
     }
@@ -93,11 +99,17 @@ public class Company_details extends AppCompatActivity {
         startActivity(mapIntent);
     }
 
-    public void deleteCompany(int id) {
+    public void deleteCompany(String id) {
         Company uneCompany = new Company();
         String urle = uneCompany.urlGen("delete", String.valueOf(id));
         JSONObject res = uneCompany.getJsonFromURL(urle);
         Intent intent = new Intent(this, Company_vue.class);
+        startActivity(intent);
+    }
+
+    public void editCompany(LightCompany uneCompany) {
+        Intent intent = new Intent(getApplicationContext(), Company_edit.class);          // Pour sa on la loge dans une classe légère compatible avec le
+        intent.putExtra("lightCompany_exported", uneCompany);                   // "serializable"
         startActivity(intent);
     }
 }

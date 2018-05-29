@@ -3,7 +3,7 @@ package com.example.issac.myapplication.MODEL;
 import java.io.Serializable;
 
 public class LightCompany  implements Serializable {
-    private int id;
+    private String stringId;
     private String name;        // le texte que l'utilisateur compléte
     private String address1;
     private String address2;
@@ -19,7 +19,7 @@ public class LightCompany  implements Serializable {
     private String city;
 
     public LightCompany(Company uneCompany) {
-        this.id = uneCompany.getId();
+        this.stringId = uneCompany.getStringId();
         this.name = uneCompany.getName();
         this.address1 = uneCompany.getAddress1();
         this.address2 = uneCompany.getAddress2();
@@ -35,12 +35,12 @@ public class LightCompany  implements Serializable {
         this.city = uneCompany.getCity();
     }
 
-    public int getId() {
-        return id;
+    public String getStringId() {
+        return stringId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setStringId(String stringId) {
+        this.stringId = stringId;
     }
 
     public String getName() {

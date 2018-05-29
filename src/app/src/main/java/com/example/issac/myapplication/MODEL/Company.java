@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Company extends Model
 {
+    private String stringId;
     private String name;        // le texte que l'utilisateur compléte
     private String address1;
     private String address2;
@@ -28,7 +29,7 @@ public class Company extends Model
     @Override
     public void putInObj(JSONObject json) {
         try {
-            this.id = json.getInt("id");
+            this.stringId = String.valueOf(json.getInt("id"));
             this.name = json.getString("name");
             this.address1 = json.getString("address1");
             this.address2 = json.getString("address2");
@@ -56,6 +57,14 @@ public class Company extends Model
             lesCompanies.add(uneCompany);
         }
         return lesCompanies;
+    }
+
+    public String getStringId() {
+        return stringId;
+    }
+
+    public void setStringId(String stringid) {
+        stringId = stringid;
     }
 
     public String getName() {

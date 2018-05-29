@@ -11,11 +11,11 @@ class company extends Model
     protected $num;
     protected $fax;
     protected $mail;
-    protected $interName;
-    protected $interNickName;
-    protected $interNum;
-    protected $interFax;
-    protected $interMail;
+    protected $intername;
+    protected $internickname;
+    protected $internum;
+    protected $interfax;
+    protected $intermail;
 
     public function __construct()
     {
@@ -29,11 +29,11 @@ class company extends Model
         $this->num = null;
         $this->fax = null;
         $this->mail = null;
-        $this->interName = null;
-        $this->interNickName = null;
-        $this->interNum = null;
-        $this->interFax = null;
-        $this->interMail = null;
+        $this->intername = null;
+        $this->internickname = null;
+        $this->internum = null;
+        $this->interfax = null;
+        $this->intermail = null;
     }
 
 
@@ -201,19 +201,19 @@ class company extends Model
     /**
      * @return mixed
      */
-    public function getInterName()
+    public function getintername()
     {
-        return $this->interName;
+        return $this->intername;
     }
 
     /**
-     * @param mixed $interName
+     * @param mixed $intername
      *
      * @return self
      */
-    public function setInterName($interName)
+    public function setintername($intername)
     {
-        $this->interName = $interName;
+        $this->intername = $intername;
 
         return $this;
     }
@@ -221,19 +221,19 @@ class company extends Model
     /**
      * @return mixed
      */
-    public function getInterNickName()
+    public function getinternickname()
     {
-        return $this->interNickName;
+        return $this->internickname;
     }
 
     /**
-     * @param mixed $interNickName
+     * @param mixed $internickname
      *
      * @return self
      */
-    public function setInterNickName($interNickName)
+    public function setinternickname($internickname)
     {
-        $this->interNickName = $interNickName;
+        $this->internickname = $internickname;
 
         return $this;
     }
@@ -241,19 +241,19 @@ class company extends Model
     /**
      * @return mixed
      */
-    public function getInterNum()
+    public function getinternum()
     {
-        return $this->interNum;
+        return $this->internum;
     }
 
     /**
-     * @param mixed $interNum
+     * @param mixed $internum
      *
      * @return self
      */
-    public function setInterNum($interNum)
+    public function setinternum($internum)
     {
-        $this->interNum = $interNum;
+        $this->internum = $internum;
 
         return $this;
     }
@@ -261,19 +261,19 @@ class company extends Model
     /**
      * @return mixed
      */
-    public function getInterFax()
+    public function getinterfax()
     {
-        return $this->interFax;
+        return $this->interfax;
     }
 
     /**
-     * @param mixed $interFax
+     * @param mixed $interfax
      *
      * @return self
      */
-    public function setInterFax($interFax)
+    public function setinterfax($interfax)
     {
-        $this->interFax = $interFax;
+        $this->interfax = $interfax;
 
         return $this;
     }
@@ -301,19 +301,19 @@ class company extends Model
     /**
      * @return mixed
      */
-    public function getInterMail()
+    public function getintermail()
     {
-        return $this->interMail;
+        return $this->intermail;
     }
 
     /**
-     * @param mixed $interMail
+     * @param mixed $intermail
      *
      * @return self
      */
-    public function setInterMail($interMail)
+    public function setintermail($intermail)
     {
-        $this->interMail = $interMail;
+        $this->intermail = $intermail;
 
         return $this;
     }
