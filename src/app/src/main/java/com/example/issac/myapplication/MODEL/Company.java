@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Company extends Model
 {
+    protected int id;
     private String stringId;
     private String name;        // le texte que l'utilisateur compléte
     private String address1;
@@ -57,6 +58,16 @@ public class Company extends Model
             lesCompanies.add(uneCompany);
         }
         return lesCompanies;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getStringId() {

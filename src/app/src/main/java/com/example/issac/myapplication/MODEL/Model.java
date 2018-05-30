@@ -16,8 +16,8 @@ import java.util.Map;
 
 public abstract class Model extends Config
 {
-    private String table;
     protected int id;
+    private String table;
     private String sqlRes;
 
     public void setTable(String table) {
@@ -34,7 +34,6 @@ public abstract class Model extends Config
 
     public Model(String latable) {
         table = latable;                       // tout le monde a une table et un id en bdd
-        id = 0;
     }
 
     public String getTable() {

@@ -4,8 +4,11 @@ package com.example.issac.myapplication.MODEL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class Importance extends Model
 {
+    protected int id;
     private String content;
 
     public Importance() {
@@ -30,7 +33,16 @@ public class Importance extends Model
         }
 
     }
-
+    public ArrayList<Importance> JSONArrayToImportances(ArrayList<JSONObject> table) {
+        ArrayList<Importance> lesImportances = new ArrayList<Importance>();
+        int i;
+        for(i=0;i<table.size();i++) {
+            Importance lImportance = new Importance();
+            lImportance.putInObj(table.get(i));
+            lesImportances.add(lImportance);
+        }
+        return lesImportances;
+    }
 
     public String getContent() {
         return content;

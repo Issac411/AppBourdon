@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Specialisation extends Model implements Serializable
 {
+    protected int id;
     private String libelle;
     private String code;
 

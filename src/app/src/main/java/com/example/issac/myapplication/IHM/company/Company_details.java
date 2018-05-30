@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.issac.myapplication.IHM.specialisation.Specialisation_add;
 import com.example.issac.myapplication.MODEL.Company;
 import com.example.issac.myapplication.MODEL.LightCompany;
 import com.example.issac.ppe2sanskt.R;
@@ -28,6 +29,8 @@ public class Company_details extends AppCompatActivity {
     private TextView companyInterMail;
     private Button suppression;
     private Button edit;
+    private Button specialisation;
+    private Button btnEntryAdd;
 
 
 
@@ -50,6 +53,8 @@ public class Company_details extends AppCompatActivity {
         companyInterMail = (TextView) findViewById(R.id.companyInterMail);
         suppression = (Button) findViewById(R.id.suppression);
         edit = (Button) findViewById(R.id.edit);
+        specialisation = (Button) findViewById(R.id.specialisation);
+        btnEntryAdd = (Button) findViewById(R.id.btnEntryAdd);
 
 
         goToMap = (Button) findViewById(R.id.goToMap);
@@ -85,6 +90,16 @@ public class Company_details extends AppCompatActivity {
             }
         });
 
+        specialisation.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                specialisationManagement(imported);
+            }
+        });
+
+        btnEntryAdd.setOnClickListener(new View.OnClickListener(){
+            public  void onClick(View v){ switchTo_Entry_add(imported);}
+        });
+
 
     }
 
@@ -107,9 +122,23 @@ public class Company_details extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void switchTo_Entry_add(LightCompany exportedCompany){
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.entry.Entry_add.class);
+        intent.putExtra("exportedCompany",exportedCompany);
+        startActivity(intent);
+    }
+
     public void editCompany(LightCompany uneCompany) {
         Intent intent = new Intent(getApplicationContext(), Company_edit.class);          // Pour sa on la loge dans une classe légère compatible avec le
         intent.putExtra("lightCompany_exported", uneCompany);                   // "serializable"
         startActivity(intent);
     }
+
+    public void specialisationManagement(LightCompany uneCompany) {
+        Intent intent = new Intent(this, Company_manage_specialisation.class);          // Pour sa on la loge dans une classe légère compatible avec le
+        intent.putExtra("lightCompany_exported", uneCompany);                   // "serializable"
+        startActivity(intent);
+    }
+
+
 }

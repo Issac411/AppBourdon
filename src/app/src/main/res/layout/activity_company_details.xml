@@ -94,10 +94,22 @@
                         android:text="Détruire cette entreprise" />
 
                     <Button
+                        android:id="@+id/btnEntryAdd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ajouter une visite" />
+
+                    <Button
                         android:id="@+id/edit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Modifier cette entreprise " />
+
+                    <Button
+                        android:id="@+id/specialisation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gérer les activités de l'entreprise" />
 
                 </LinearLayout>
             </LinearLayout>
