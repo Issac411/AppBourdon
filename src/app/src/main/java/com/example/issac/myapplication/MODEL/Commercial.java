@@ -26,8 +26,9 @@ public class Commercial extends Model {
 
     public void putInObj(JSONObject json) {
         try {
+            this.id = json.getInt("id");
             this.name = json.getString("name");                 // ici on assigne la totalité des attributs avec le résultat en JSON
-            this.nickName = json.getString("nickName");
+            this.nickName = json.getString("nickname");
             this.address1 = json.getString("address1");
             this.address2 = json.getString("address2");
             this.pc = json.getString("pc");
@@ -106,4 +107,6 @@ public class Commercial extends Model {
     public void setCity(String city) {
         this.city = city;
     }
+
+
 }

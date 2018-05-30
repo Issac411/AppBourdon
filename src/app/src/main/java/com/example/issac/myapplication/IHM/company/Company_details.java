@@ -80,7 +80,7 @@ public class Company_details extends AppCompatActivity {
 
         suppression.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                deleteCompany(imported.getStringId());
+                deleteCompany(String.valueOf(imported.getId()));
             }
         });
 

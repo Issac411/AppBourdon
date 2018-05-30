@@ -37,6 +37,7 @@ import java.util.SortedMap;
 
 public class Entry_add extends AppCompatActivity {
 
+    private Entry laVisite = new Entry();
     DateFormat formatDateTime = DateFormat.getDateTimeInstance();
     Calendar dateTime = Calendar.getInstance();
     Timestamp timestamp = new Timestamp(0,0,0,0,0,0,0);
@@ -53,7 +54,8 @@ public class Entry_add extends AppCompatActivity {
     private ArrayList<Commercial> listCommercial = new ArrayList<>();
     private ArrayList<Importance> listImportance = new ArrayList<>();
 
-    @TargetApi(Build.VERSION_CODES.N)
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,10 +73,7 @@ public class Entry_add extends AppCompatActivity {
         btnCreation = (Button) findViewById(R.id.btn_creation);
         importedCompany = (LightCompany) intent.getSerializableExtra("exportedCompany");
 
-        txtCompany.setText(String.valueOf(importedCompany.getId()));
-
-
-
+        txtCompany.setText(String.valueOf(importedCompany.getName()));
 
 
         listImportance = getListImportance();
@@ -94,6 +93,7 @@ public class Entry_add extends AppCompatActivity {
 
         spinnerCommercial.setAdapter(adapterCommercial);
 
+        //Remplissage de la liste du spinner pour les importances
         List lesImportances = new ArrayList();
         for(Importance imp : listImportance){
             lesImportances.add(imp.getContent());
@@ -130,6 +130,8 @@ public class Entry_add extends AppCompatActivity {
 
         UpdateText();
     }
+
+
     //Ouvre un calendrier pour selectionner la date
     private void updateDate(){
         new DatePickerDialog(this, d, dateTime.get(Calendar.YEAR),dateTime.get(Calendar.MONTH),dateTime.get(Calendar.DAY_OF_MONTH)).show();
@@ -165,7 +167,7 @@ public class Entry_add extends AppCompatActivity {
     };
 
 
-    @TargetApi(Build.VERSION_CODES.N)
+
     private ArrayList<Importance> getListImportance(){
         Importance uneImportance = new Importance();
         JSONObject resReadCommercial;
@@ -176,7 +178,7 @@ public class Entry_add extends AppCompatActivity {
         return uneImportance.JSONArrayToImportances(lesElements);
     }
 
-    @TargetApi(Build.VERSION_CODES.N)
+
     private ArrayList<Commercial> getListCommercial(){
         Commercial unCommercial = new Commercial();
         JSONObject resReadCommercial;
@@ -200,32 +202,22 @@ public class Entry_add extends AppCompatActivity {
         timestamp.setMinutes(dateTime.get(Calendar.MINUTE));
     }
 
+    private void setLaVisite(){
+        laVisite.setIdcompany(importedCompany.getId());
+        laVisite.setIdcommercial(listCommercial.get(spinnerCommercial.getSelectedItemPosition()).getId());
+        laVisite.setIdimportance(listImportance.get(spinnerImportance.getSelectedItemPosition()).getId());
+        laVisite.setDate(timestamp);
+        laVisite.setComment(txtComment.getText().toString());
+        laVisite.setDuration(Integer.parseInt(txtDuration.getText().toString(),10));
+        laVisite.setStatus("Programmer");
+    }
+
 
     private void creationEntry(){
-        Entry uneEntry = new Entry();
-        uneEntry.setIdcompany(importedCompany.getId());
-        uneEntry.setIdcommercial(listCommercial.get(spinnerCommercial.getSelectedItemPosition()).getId());
-        uneEntry.setIdimportance(listImportance.get(spinnerImportance.getSelectedItemPosition()).getId());
-        uneEntry.setDate(timestamp);
-        uneEntry.setComment(txtComment.getText().toString());
-        uneEntry.setDuration(Integer.parseInt(txtDuration.getText().toString(),10));
-        uneEntry.setStatus("Programmer");
-        //String url = uneEntry.create();
-
-        String testurl = uneEntry.urlGen("create",
-                String.valueOf(String.valueOf(importedCompany.getId())),
-                String.valueOf(String.valueOf(listCommercial.get(spinnerCommercial.getSelectedItemPosition()).getId())),
-                String.valueOf(String.valueOf(listImportance.get(spinnerImportance.getSelectedItemPosition()).getId())),
-                String.valueOf(String.valueOf(timestamp)),
-                txtComment.getText().toString(),
-                String.valueOf(String.valueOf(txtDuration.getText())),
-                txtComment.getText().toString());
-
-        txtCompany.setText(testurl);
-        //txtDateTime.setText(String.valueOf(listCommercial.get(spinnerCommercial.getSelectedItemPosition()).getId()));
-
-//        Intent intent = new Intent(getApplicationContext(), Company_vue.class);
-//        startActivity(intent);
+        setLaVisite();
+        laVisite.create();
+        Intent intent = new Intent(getApplicationContext(), Company_vue.class);
+        startActivity(intent);
     }
 
 }

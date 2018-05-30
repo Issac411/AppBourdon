@@ -8,12 +8,14 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -26,6 +28,11 @@
                     android:orientation="vertical">
 
 
+                    <Button
+                        android:id="@+id/btnEntryAdd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ajouter une visite" />
 
                     <TextView
                         android:id="@+id/companyName"
@@ -92,12 +99,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Détruire cette entreprise" />
-
-                    <Button
-                        android:id="@+id/btnEntryAdd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Ajouter une visite" />
 
                     <Button
                         android:id="@+id/edit"

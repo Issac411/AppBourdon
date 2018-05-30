@@ -27,12 +27,15 @@ public class Importance extends Model
     Permet d'assigner des attributs d'un objet avec un élément JSON
      */ public void putInObj(JSONObject json) {
         try {
-            this.content = json.getString("res");                 // ici on assigne la totalité des attributs avec le résultat en JSON (ici modif pour debug req Creation)
+            this.id = json.getInt("id");
+            this.content = json.getString("content");                 // ici on assigne la totalité des attributs avec le résultat en JSON (ici modif pour debug req Creation)
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
     }
+
+
     public ArrayList<Importance> JSONArrayToImportances(ArrayList<JSONObject> table) {
         ArrayList<Importance> lesImportances = new ArrayList<Importance>();
         int i;
@@ -48,5 +51,13 @@ public class Importance extends Model
         return content;
     }
 
+    @Override
+    public int getId() {
+        return id;
+    }
 
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
 }

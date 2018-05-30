@@ -71,7 +71,7 @@ public class Company_edit extends AppCompatActivity {
 
         Intent intent = getIntent();
         LightCompany imported = (LightCompany) intent.getSerializableExtra("lightCompany_exported");
-        String lid = (imported.getStringId());
+        String lid = (String.valueOf(imported.getId()));
         companyNameField.setText(imported.getName());
         companyAddress1_field.setText(imported.getAddress1());
         companyAddress2_field.setText(imported.getAddress2());

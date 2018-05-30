@@ -54,9 +54,9 @@ public class Entry extends Model
     public String create(){
         JSONObject res = new JSONObject();
         String url = this.urlGen("create",
-                String.valueOf(6),
-                String.valueOf(1),
-                String.valueOf(1),
+                String.valueOf(this.idcompany),
+                String.valueOf(this.idcommercial),
+                String.valueOf(this.idimportance),
                 String.valueOf(this.date),
                 this.comment,
                 String.valueOf(this.duration),
