@@ -4,32 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IHM.entry.entry_add">
+    tools:context="com.example.issac.myapplication.IHM.entry.entry_add">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/company_selected"
-                android:layout_width="186dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Entreprise :" />
-
-            <TextView
-                android:id="@+id/txtCompany"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
 
         <TextView
             android:id="@+id/commercial_selected"
@@ -37,21 +17,30 @@
             android:layout_height="wrap_content"
             android:text="Selectionnez un commercial." />
 
-        <Spinner
-        android:id="@+id/spinnerCommercial"
-        android:layout_width="match_parent"
-        android:layout_height="41dp" />
-
-        <TextView
-            android:id="@+id/importance"
+        <Button
+            android:id="@+id/commercial_selector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selectionner l'importance de la visite" />
+            android:text="Button" />
 
-        <Spinner
-            android:id="@+id/spinnerImportance"
+        <TextView
+            android:id="@+id/company_selected"
             android:layout_width="match_parent"
-            android:layout_height="41dp" />
+            android:layout_height="wrap_content"
+            android:text="Selectionnez une entreprise." />
+
+        <Button
+            android:id="@+id/company_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date" />
 
         <TextView
             android:id="@+id/duration"
@@ -60,9 +49,9 @@
             android:text="Durée du rendez-vous" />
 
         <EditText
-            android:id="@+id/txtDuration"
+            android:id="@+id/duration_field"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number" />
 
@@ -73,58 +62,17 @@
             android:text="Commentaire au sujet de ce rendez-vous" />
 
         <EditText
-            android:id="@+id/txtComment"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/dateHeure"
+            android:id="@+id/comment_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date et Heure du rendez vous :" />
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
 
-        <TextView
-            android:id="@+id/txt_date"
+        <Button
+            android:id="@+id/creation"
             android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:text="Date +Heure" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="176dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Choisir l'heure" />
-
-                <Button
-                    android:id="@+id/btn_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Choisir la date" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btn_creation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Creer la visite" />
-
-        </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:text="creation" />
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>
