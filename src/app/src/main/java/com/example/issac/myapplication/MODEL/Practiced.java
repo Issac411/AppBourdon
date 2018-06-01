@@ -19,8 +19,8 @@ public class Practiced extends Model
     @Override
     protected void putInObj(JSONObject json) {
         try {
-            this.idSpecialisation = json.getInt("idSpecialisation");
-            this.idCompany = json.getInt("idCompany"); // ici on assigne la totalité des attributs avec le résultat en JSON (ici modif pour debug req Creation)
+            this.idSpecialisation = json.getInt("idspecialisation");
+            this.idCompany = json.getInt("idcompany"); // ici on assigne la totalité des attributs avec le résultat en JSON (ici modif pour debug req Creation)
         } catch (JSONException e) {
             e.printStackTrace();
         }

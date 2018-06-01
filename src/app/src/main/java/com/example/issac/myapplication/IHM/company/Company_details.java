@@ -9,13 +9,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.issac.myapplication.CONFIG.JSONAct;
 import com.example.issac.myapplication.IHM.specialisation.Specialisation_add;
 import com.example.issac.myapplication.MODEL.Company;
 import com.example.issac.myapplication.MODEL.LightCompany;
 import com.example.issac.myapplication.MODEL.Practiced;
+import com.example.issac.myapplication.MODEL.Specialisation;
 import com.example.issac.ppe2sanskt.R;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 
 public class Company_details extends AppCompatActivity {
@@ -33,6 +38,21 @@ public class Company_details extends AppCompatActivity {
     private Button specialisation;
     private Button btnEntryAdd;
     private TextView specialisations;
+    private Button specialisationDelete;
+    JSONObject specialisation_JSON = new JSONObject();
+    JSONArray specialisation_JSONArray = new JSONArray();
+    ArrayList<JSONObject> specialisations_JSON_array = new ArrayList<JSONObject>();
+    ArrayList<Specialisation> lesSpecialistions = new ArrayList<Specialisation>();
+    ArrayList<String> lesIdSpecialisations = new ArrayList<String>();
+    Specialisation uneSpecialisation = new Specialisation();
+
+    JSONObject pratique_JSON = new JSONObject();
+    JSONArray pratique_JSONArray = new JSONArray();
+    ArrayList<JSONObject> pratiques_JSON_array = new ArrayList<JSONObject>();
+    ArrayList<Practiced> lesPratiques = new ArrayList<Practiced>();
+    ArrayList<Practiced> LesPratiquesDeLentreprise = new ArrayList<Practiced>();
+    Practiced unePracticed = new Practiced();
+    String chaine = "";
 
 
 
@@ -58,6 +78,7 @@ public class Company_details extends AppCompatActivity {
         specialisation = (Button) findViewById(R.id.specialisation);
         btnEntryAdd = (Button) findViewById(R.id.btnEntryAdd);
         specialisations = (TextView) findViewById(R.id.specialisations);
+        specialisationDelete = (Button) findViewById(R.id.specialisationDelete);
 
 
         goToMap = (Button) findViewById(R.id.goToMap);
@@ -73,11 +94,38 @@ public class Company_details extends AppCompatActivity {
         companyInterNum.setText(Html.fromHtml("<b>Numéro de téléphone du représentant : "+imported.getInterNum().toString()+"</b>"));
         companyInterMail.setText(Html.fromHtml("<b>Mail du représentant : "+imported.getInterMail().toString()+"</b>"));
 
-        Practiced pratique = new Practiced();
-        String url = pratique.urlGen("read");
+
+        String url = uneSpecialisation.urlGen("read");
+        JSONObject res = uneSpecialisation.getJsonFromURL(url);
+        specialisation_JSON = uneSpecialisation.getJsonFromURL(url);                                            //
+        specialisation_JSONArray = uneSpecialisation.getAllObject(specialisation_JSON);                         //
+        specialisations_JSON_array = JSONAct.JSONArrayToArray(specialisation_JSONArray);                        //
+        lesSpecialistions = uneSpecialisation.JSONArrayToSpecialisations(specialisations_JSON_array);           // <- JSONObject[JSONArray(JSONobj1)(JSONobj2)...]] TO -> ArrayList[(obj1)(obj2)...]
 
 
+        url = unePracticed.urlGen("read");
+        JSONObject res2 = unePracticed.getJsonFromURL(url);
+        specialisation_JSON = unePracticed.getJsonFromURL(url);                                            //
+        specialisation_JSONArray = unePracticed.getAllObject(specialisation_JSON);                         //
+        specialisations_JSON_array = JSONAct.JSONArrayToArray(specialisation_JSONArray);                        //
+        lesPratiques = unePracticed.JSONArrayToLink(specialisations_JSON_array);           // <- JSONObject[JSONArray(JSONobj1)(JSONobj2)...]] TO -> ArrayList[(obj1)(obj2)...]
+        for(int i=0;i<lesPratiques.size();i++) {
 
+            if(lesPratiques.get(i).getIdCompany() == imported.getId()) {
+                for(int i2 = 0;i2<lesSpecialistions.size();i2++) {
+                    if(lesSpecialistions.get(i2).getId() == lesPratiques.get(i).getIdSpecialisation()) {
+                        chaine = chaine + " : " +lesSpecialistions.get(i2).getLibelle();
+                        LesPratiquesDeLentreprise.add(lesPratiques.get(i));
+                    }
+                }
+
+            }
+        }
+        if(chaine == "") {
+            specialisations.setText(Html.fromHtml("<b>Aucune activité définie</b>"));
+        } else {
+            specialisations.setText(Html.fromHtml("<b>Secteur d'activité :</b>" + chaine));
+        }
 
         goToMap.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -106,6 +154,10 @@ public class Company_details extends AppCompatActivity {
 
         btnEntryAdd.setOnClickListener(new View.OnClickListener(){
             public  void onClick(View v){ switchTo_Entry_add(imported);}
+        });
+
+        specialisationDelete.setOnClickListener(new View.OnClickListener(){
+            public  void onClick(View v){ specialisationDelete(imported);}
         });
 
 
@@ -145,6 +197,19 @@ public class Company_details extends AppCompatActivity {
     public void specialisationManagement(LightCompany uneCompany) {
         Intent intent = new Intent(this, Company_manage_specialisation.class);          // Pour sa on la loge dans une classe légère compatible avec le
         intent.putExtra("lightCompany_exported", uneCompany);                   // "serializable"
+        startActivity(intent);
+    }
+
+    public void specialisationDelete(LightCompany imported) {
+        int i;
+        String url ="";
+        for(i=0;i<lesPratiques.size();i++) {
+            url = unePracticed.urlGen("delete",String.valueOf(lesPratiques.get(i).getIdSpecialisation()),String.valueOf(lesPratiques.get(i).getIdCompany()));
+            unePracticed.getJsonFromURL(url);
+        }
+        specialisations.setText(url);
+        Intent intent = new Intent(this, Company_details.class);          // Pour sa on la loge dans une classe légère compatible avec le
+        intent.putExtra("lightCompany_exported", imported);                   // "serializable"
         startActivity(intent);
     }
 

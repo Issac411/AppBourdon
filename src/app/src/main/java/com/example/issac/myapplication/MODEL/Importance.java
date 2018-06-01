@@ -51,18 +51,12 @@ public class Importance extends Model
         return content;
     }
 
-<<<<<<< HEAD
-=======
-    @Override
->>>>>>> 0c673d587278efd352d5772bbfd6a89b1a8a8785
+
     public int getId() {
         return id;
     }
 
-<<<<<<< HEAD
-=======
-    @Override
->>>>>>> 0c673d587278efd352d5772bbfd6a89b1a8a8785
+
     public void setId(int id) {
         this.id = id;
     }

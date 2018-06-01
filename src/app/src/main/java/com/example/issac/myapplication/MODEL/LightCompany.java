@@ -3,11 +3,7 @@ package com.example.issac.myapplication.MODEL;
 import java.io.Serializable;
 
 public class LightCompany  implements Serializable {
-<<<<<<< HEAD
     private int id;
-=======
-    protected int id;
->>>>>>> 0c673d587278efd352d5772bbfd6a89b1a8a8785
     private String name;        // le texte que l'utilisateur compléte
     private String address1;
     private String address2;

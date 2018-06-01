@@ -116,7 +116,13 @@
                         android:id="@+id/specialisation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Gérer les activités de l'entreprise" />
+                        android:text="Ajouter des activités de l'entreprise" />
+
+                    <Button
+                        android:id="@+id/specialisationDelete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Retirer les activités de cette entreprise" />
 
                 </LinearLayout>
             </LinearLayout>

@@ -136,5 +136,3 @@ public class Company_manage_specialisation extends AppCompatActivity {
         }
 
 }
-                        /* idSpecialisation = lesSpecialistions.get(i2).getId();
-                                 idCompany = imported.getId();*/
