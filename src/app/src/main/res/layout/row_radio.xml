@@ -3,22 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="10dp" >
 
-        <ToggleButton
-            android:id="@id/radio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/row_text"
-            android:text="aa" />
 
-        <TextView
-            android:id="@+id/row_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nom de l'activité" />
+        <TextView android:id="@+id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@android:color/black" android:layout_marginLeft="10dp" android:textStyle="bold" tools:text="Pseudo" />
+
 
     </RelativeLayout>
 

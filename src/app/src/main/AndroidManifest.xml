@@ -26,7 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.issac.myapplication.IHM.User_list" />
         <activity android:name="com.example.issac.myapplication.IHM.User_add" />
         <activity android:name="com.example.issac.myapplication.IHM.Main_options" />
         <activity android:name="com.example.issac.myapplication.IHM.specialisation.Specialisation_add" />
@@ -37,8 +36,8 @@
         <activity android:name="com.example.issac.myapplication.IHM.company.Company_vue" />
         <activity android:name="com.example.issac.myapplication.IHM.company.Company_details" />
         <activity android:name="com.example.issac.myapplication.IHM.company.Company_edit" />
-        <activity android:name="com.example.issac.myapplication.IHM.company.Company_manage_specialisation" />
-        <activity android:name="com.example.issac.myapplication.IHM.entry.Entry_add"></activity>
+        <activity android:name="com.example.issac.myapplication.IHM.entry.Entry_add" />
+        <activity android:name="com.example.issac.myapplication.IHM.company.Company_manage_specialisation"></activity>
     </application>
 
 </manifest>

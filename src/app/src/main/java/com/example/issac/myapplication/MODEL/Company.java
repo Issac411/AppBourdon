@@ -7,7 +7,11 @@ import java.util.ArrayList;
 
 public class Company extends Model
 {
+<<<<<<< HEAD
+    private int id;
+=======
     protected int id;
+>>>>>>> 0c673d587278efd352d5772bbfd6a89b1a8a8785
     private String name;        // le texte que l'utilisateur compléte
     private String address1;
     private String address2;
@@ -59,18 +63,19 @@ public class Company extends Model
         return lesCompanies;
     }
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public void setId(int id) {
         this.id = id;
     }
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 0c673d587278efd352d5772bbfd6a89b1a8a8785
 
     public String getName() {
         return name;

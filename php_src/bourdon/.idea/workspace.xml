@@ -10,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -146,18 +146,18 @@
       <workItem from="1518163664789" duration="7834000" />
       <workItem from="1518180927986" duration="1187000" />
       <workItem from="1523920104534" duration="2134000" />
+      <workItem from="1527670441937" duration="16000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16106000" />
+    <option name="totallyTimeSpent" value="16122000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16927083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17110874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920793" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -171,6 +171,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -186,116 +187,47 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/lib/Model.php">
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/lib/Model.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/InterfaceController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/lib/Model.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/test/cmd.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/TestController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/model/HotspotsCmd.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/test/resultcmd.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/hotspots/cmd.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/HotspotsController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/data/sortedTables.sql" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/data/reqs.sql" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/InterfaceController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/hotspots/show.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/TestController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/test/gc.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/data/sortedTables.sql" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/interface/json.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/hotspots/show.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/AjaxController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/data/reqs.sql" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/HotspotsController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/test/gc.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/test/cmd.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/model/HotspotsCmd.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/test/resultcmd.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/TestController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/InterfaceController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/hotspots/cmd.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/webroot/index.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/config/DBConfig.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/data/req.sql" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/model/SecteurActivite.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../D:/hotspots/panel/kernel/app/model/HotspotsMaj.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/database/json.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/view/layout/Default.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/app/controller/DatabaseController.php" />
+    <entry file="file:$PROJECT_DIR$/../../../../145.239.76.62/sharedfolder1/bourdon/kernel/lib/Model.php" />
+    <entry file="file:$PROJECT_DIR$/../../..//$PROJECT_DIR$/kernel/app/controller/DatabaseController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/InterfaceController.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/lib/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4573">
-          <caret line="269" column="35" lean-forward="false" selection-start-line="269" selection-start-column="35" selection-end-line="269" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/test/cmd.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/TestController.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/model/HotspotsCmd.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/test/resultcmd.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/hotspots/cmd.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/HotspotsController.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/data/sortedTables.sql" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/data/reqs.sql" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/InterfaceController.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/hotspots/show.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/TestController.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/test/gc.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/data/sortedTables.sql" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/interface/json.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/hotspots/show.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/AjaxController.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/data/reqs.sql" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/HotspotsController.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/test/gc.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/test/cmd.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/model/HotspotsCmd.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/test/resultcmd.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/TestController.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/InterfaceController.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/hotspots/cmd.php" />
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/webroot/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="60" column="39" lean-forward="true" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/config/DBConfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/data/req.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/model/SecteurActivite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//D:/hotspots/panel/kernel/app/model/HotspotsMaj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="35" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/database/json.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/view/layout/Default.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/app/controller/DatabaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:$PROJECT_DIR$/../../../..//$PROJECT_DIR$/kernel/lib/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="73" column="25" lean-forward="false" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="25" />
           <folding />
         </state>
       </provider>

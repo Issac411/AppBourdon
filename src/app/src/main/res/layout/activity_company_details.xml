@@ -88,6 +88,12 @@
                         android:layout_height="wrap_content"
                         android:text="TextView" />
 
+                    <TextView
+                        android:id="@+id/specialisations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="specialisations" />
+
                     <Button
                         android:id="@+id/goToMap"
                         android:layout_width="match_parent"

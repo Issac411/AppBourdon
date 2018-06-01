@@ -3,7 +3,7 @@ require_once(LIB."Controller.php");
 class DatabaseController extends Controller{
 
     public function __construct(){
-        $this->models = array("specialisation","company","importance","commercial");
+        $this->models = array("specialisation","company","importance","commercial","practiced",'entry');
         parent::__construct();
 
 
@@ -218,8 +218,104 @@ return un res au format Json
   }
 
 
-// il manque practiced et entry à réaliser sur ce modèle.
+public function entry($act = null,$param = null,$param2 = null,$param3 = null,$param4 = null,$param5 = null,$param6 = null,$param7 = null, $param8 = null){
+        $data = array();
+        switch($act){
+            case "read":
+                if(!empty($param) && $this->entry->read($param)){      // si il y a un paramètre et que l'objet courrant peut se peupler
+                    $data = $this->entry->getAll(); 
+                }else {
+                    $data["res"] = $this->entry->readAll();            // sinon, on read tout
+                }
+                break;
+            case "create":
+                if(!empty($param) && !empty($param2) && !empty($param3) && !empty($param4) && !empty($param5) && !empty($param6) && !empty($param7)){
+                    $this->entry->setIdcompany(urldecode($param1));
+                    $this->entry->setIdcommercial(urldecode($param2));
+                    $this->entry->setIdimportance(urldecode($param3));
+                    $this->entry->setDate(urldecode($param4));
+                    $this->entry->setComment(urldecode($param5));
+                    $this->entry->setDuration(urldecode($param6));
+                    $this->entry->setStatus(urldecode($param7));
+                    $data['res'] = $this->entry->create();
+                }
+                break;
+            case "delete":
+                if(!empty($param) && $this->entry->read($param)){ 
+                    $data['res'] = $this->entry->delete($param);
+                } else {
+                    $data['res'] = false;
+                }
+                break;
+            case "update":
+                if(!empty($param) && $this->entry->read($param) && !empty($param2) && !empty($param3) && !empty($param4) && !empty($param5) && !empty($param6) && !empty($param7) && !empty($param8)){
+                    $this->entry->setIdcompany(urldecode($param2));
+                    $this->entry->setIdcommercial(urldecode($param3));
+                    $this->entry->setIdimportance(urldecode($param4));
+                    $this->entry->setDate(urldecode($param5));
+                    $this->entry->setComment(urldecode($param6));
+                    $this->entry->setDuration(urldecode($param7));
+                    $this->entry->setStatus(urldecode($param8));
 
+                    $data['res'] = $this->entry->update();
+                }
+                break;
+            default:
+                break;
+        }
+        $this->set(array("data" => $data));
+        $this->render("json");
+  }
+
+/*
+10/05
+Boutte/Matthieu
+Permet de gérer le CRUD pour chaque table, une fonction par table
+return un res au format Json
+*/
+  public function practiced($act = null,$param = null,$param2 = null){
+        $data = array();
+        switch($act){
+            case "read":
+                if(!empty($param) && !empty($param2) && $this->practiced->read(array($param,$param2))){      // si il y a un paramètre et que l'objet courrant peut se peupler
+                    $data = $this->practiced->getAll(); 
+                }else {
+                    $data["res"] = $this->practiced->readAll();            // sinon, on read tout
+                }
+                break;
+            case "create":
+                if(!empty($param) && !empty($param2)){
+                    $this->practiced->setIdSpecialisation(urldecode($param));
+                    $this->practiced->setIdCompany(urldecode($param2));
+                    $data['res'] = $this->practiced->create();
+                }
+                break;
+            case "delete":
+                if(!empty($param) && $this->commercial->read($param)){ 
+                    $data['res'] = $this->commercial->delete($param);
+                } else {
+                    $data['res'] = false;
+                }
+                break;
+            case "update":
+                if(!empty($param) && $this->commercial->read($param) && !empty($param2) && !empty($param3) && !empty($param4) && !empty($param5) && !empty($param6) && !empty($param7)){
+
+                    $this->commercial->setNickName(urldecode($param));
+                    $this->commercial->setName(urldecode($param2));
+                    $this->commercial->setAddress1(urldecode($param3));
+                    $this->commercial->setAddress2(urldecode($param4));
+                    $this->commercial->setPc(urldecode($param5));
+                    $this->commercial->setCity(urldecode($param6));
+
+                    $data['res'] = $this->commercial->update();
+                }
+                break;
+            default:
+                break;
+        }
+        $this->set(array("data" => $data));
+        $this->render("json");
+  }
 
 
 

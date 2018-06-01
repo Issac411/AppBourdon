@@ -1,5 +1,6 @@
 package com.example.issac.myapplication.MODEL.radioRows;
 
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -8,11 +9,9 @@ import android.widget.ToggleButton;
 
 public class RadioRow {
     private String name;
-    private ToggleButton radio;
 
-    public RadioRow(String name, ToggleButton Button) {
+    public RadioRow(String name, Boolean isChecked) {
         this.name = name;
-        this.radio = Button;
     }
 
     public String getName() {
@@ -23,11 +22,4 @@ public class RadioRow {
         this.name = name;
     }
 
-    public ToggleButton getRadio() {
-        return radio;
-    }
-
-    public void setRadio(ToggleButton radio) {
-        this.radio = radio;
-    }
 }

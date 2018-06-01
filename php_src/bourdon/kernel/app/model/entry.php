@@ -3,6 +3,9 @@ require_once(LIB."Model.php");
 class entry extends Model
 {
     protected $id;
+    protected $idcompany;
+    protected $idcommercial;
+    protected $idimportance;
     protected $date;
     protected $comment;
     protected $duration;
@@ -12,16 +15,17 @@ class entry extends Model
     {
         parent::__construct("entry", "id");
         $this->id = null;
+        $this->idcompany = null;
+        $this->idcommercial = null;
+        $this->idimportance = null;
         $this->date = null;
         $this->comment = null;
         $this->duration = null;
         $this->status = null;
     }
 
-
-
     /**
-     * @return mixed
+     * @return null
      */
     public function getId()
     {
@@ -29,19 +33,63 @@ class entry extends Model
     }
 
     /**
-     * @param mixed $id
-     *
-     * @return self
+     * @param null $id
      */
     public function setId($id)
     {
         $this->id = $id;
-
-        return $this;
     }
 
     /**
-     * @return mixed
+     * @return null
+     */
+    public function getIdcompany()
+    {
+        return $this->idcompany;
+    }
+
+    /**
+     * @param null $idcompany
+     */
+    public function setIdcompany($idcompany)
+    {
+        $this->idcompany = $idcompany;
+    }
+
+    /**
+     * @return null
+     */
+    public function getIdcommercial()
+    {
+        return $this->idcommercial;
+    }
+
+    /**
+     * @param null $idcommercial
+     */
+    public function setIdcommercial($idcommercial)
+    {
+        $this->idcommercial = $idcommercial;
+    }
+
+    /**
+     * @return null
+     */
+    public function getIdimportance()
+    {
+        return $this->idimportance;
+    }
+
+    /**
+     * @param null $idimportance
+     */
+    public function setIdimportance($idimportance)
+    {
+        $this->idimportance = $idimportance;
+    }
+
+    /**
+     * @return null
      */
     public function getDate()
     {
@@ -49,19 +97,15 @@ class entry extends Model
     }
 
     /**
-     * @param mixed $date
-     *
-     * @return self
+     * @param null $date
      */
     public function setDate($date)
     {
         $this->date = $date;
-
-        return $this;
     }
 
     /**
-     * @return mixed
+     * @return null
      */
     public function getComment()
     {
@@ -69,19 +113,15 @@ class entry extends Model
     }
 
     /**
-     * @param mixed $comment
-     *
-     * @return self
+     * @param null $comment
      */
     public function setComment($comment)
     {
         $this->comment = $comment;
-
-        return $this;
     }
 
     /**
-     * @return mixed
+     * @return null
      */
     public function getDuration()
     {
@@ -89,19 +129,15 @@ class entry extends Model
     }
 
     /**
-     * @param mixed $duration
-     *
-     * @return self
+     * @param null $duration
      */
     public function setDuration($duration)
     {
         $this->duration = $duration;
-
-        return $this;
     }
 
     /**
-     * @return mixed
+     * @return null
      */
     public function getStatus()
     {
@@ -109,14 +145,15 @@ class entry extends Model
     }
 
     /**
-     * @param mixed $status
-     *
-     * @return self
+     * @param null $status
      */
     public function setStatus($status)
     {
         $this->status = $status;
-
-        return $this;
     }
+
+
+
+
+
 }

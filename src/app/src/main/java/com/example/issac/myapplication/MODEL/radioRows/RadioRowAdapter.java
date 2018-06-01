@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -25,7 +26,7 @@ public class RadioRowAdapter extends ArrayAdapter<RadioRow> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        int selectedValueId = 0;
+
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_radio, parent, false);
         }
@@ -34,19 +35,14 @@ public class RadioRowAdapter extends ArrayAdapter<RadioRow> {
         if (viewHolder == null) {
             viewHolder = new RadioRowViewHolder();
             viewHolder.name = (TextView) convertView.findViewById(R.id.name);
-            viewHolder.radio =(ToggleButton) convertView.findViewById(R.id.radio);
-
             convertView.setTag(viewHolder);
         }
+
         RadioRow theRow = getItem(position);
 
         //il ne reste plus qu'à remplir notre vue
         viewHolder.name.setText(theRow.getName());
-        //viewHolder.radio = theRow.getRadio();
-        /*if (viewHolder.radio.isChecked()) {
-
-        }*/
-
         return convertView;
     }
 }
+

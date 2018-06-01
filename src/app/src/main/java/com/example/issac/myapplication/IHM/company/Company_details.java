@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.issac.myapplication.IHM.specialisation.Specialisation_add;
 import com.example.issac.myapplication.MODEL.Company;
 import com.example.issac.myapplication.MODEL.LightCompany;
+import com.example.issac.myapplication.MODEL.Practiced;
 import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONObject;
@@ -31,6 +32,7 @@ public class Company_details extends AppCompatActivity {
     private Button edit;
     private Button specialisation;
     private Button btnEntryAdd;
+    private TextView specialisations;
 
 
 
@@ -55,6 +57,7 @@ public class Company_details extends AppCompatActivity {
         edit = (Button) findViewById(R.id.edit);
         specialisation = (Button) findViewById(R.id.specialisation);
         btnEntryAdd = (Button) findViewById(R.id.btnEntryAdd);
+        specialisations = (TextView) findViewById(R.id.specialisations);
 
 
         goToMap = (Button) findViewById(R.id.goToMap);
@@ -70,6 +73,10 @@ public class Company_details extends AppCompatActivity {
         companyInterNum.setText(Html.fromHtml("<b>Numéro de téléphone du représentant : "+imported.getInterNum().toString()+"</b>"));
         companyInterMail.setText(Html.fromHtml("<b>Mail du représentant : "+imported.getInterMail().toString()+"</b>"));
 
+        Practiced pratique = new Practiced();
+        String url = pratique.urlGen("read");
+
+
 
 
         goToMap.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +87,11 @@ public class Company_details extends AppCompatActivity {
 
         suppression.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+<<<<<<< HEAD
+                deleteCompany(imported.getId());
+=======
                 deleteCompany(String.valueOf(imported.getId()));
+>>>>>>> 0c673d587278efd352d5772bbfd6a89b1a8a8785
             }
         });
 
@@ -114,7 +125,7 @@ public class Company_details extends AppCompatActivity {
         startActivity(mapIntent);
     }
 
-    public void deleteCompany(String id) {
+    public void deleteCompany(int id) {
         Company uneCompany = new Company();
         String urle = uneCompany.urlGen("delete", String.valueOf(id));
         JSONObject res = uneCompany.getJsonFromURL(urle);

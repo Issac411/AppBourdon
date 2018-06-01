@@ -32,6 +32,14 @@ public class Specialisation extends Model implements Serializable
         this.code = code;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void putInObj(JSONObject json) {
         try {
             this.code = json.getString("code");                 // ici on assigne la totalité des attributs avec le résultat en JSON (ici modif pour debug req Creation)
@@ -58,5 +66,7 @@ public class Specialisation extends Model implements Serializable
         }
         return lesSpecialisations;
     }
+
+
 
 }

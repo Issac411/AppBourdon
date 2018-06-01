@@ -16,7 +16,6 @@ import java.util.Map;
 
 public abstract class Model extends Config
 {
-    protected int id;
     private String table;
     private String sqlRes;
 
@@ -72,20 +71,12 @@ public abstract class Model extends Config
         }
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     /*
         07/05
         Matthieu (basé sur Boutte)
         Permet d'assigner des attributs d'un objet avec un élément JSON
          */
     protected abstract void putInObj(JSONObject json);      // pour loger dans l'objet selon les attributs de ce dernier.
-
-    public int getId() {
-        return this.id;
-    }
 
 
 
