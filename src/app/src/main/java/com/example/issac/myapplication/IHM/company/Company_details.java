@@ -87,11 +87,8 @@ public class Company_details extends AppCompatActivity {
 
         suppression.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-<<<<<<< HEAD
                 deleteCompany(imported.getId());
-=======
-                deleteCompany(String.valueOf(imported.getId()));
->>>>>>> 0c673d587278efd352d5772bbfd6a89b1a8a8785
+                deleteCompany(Integer.parseInt(String.valueOf(imported.getId())));
             }
         });
 
