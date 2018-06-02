@@ -3,9 +3,13 @@ package com.example.issac.myapplication.IHM;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 import com.example.issac.ppe2sanskt.R;
 
@@ -55,10 +59,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);                         // le contenu affiché est celui du fichier "activity_main.xml"
         exit = (Button) findViewById(R.id.exit);                        // Le bouton exit est lié au bouton portant l'id "exit"
         specialisation_vue = (Button) findViewById(R.id.specialisation_vue);              // Le bouton user_view est lié au bouton portant l'id "user_view"
-        specialisation_add = (Button) findViewById(R.id.specialisation_add);        //
         commercial_add = (Button) findViewById(R.id.commercial_add);
         company_vue = (Button) findViewById(R.id.company_vue);
         importance_add = (Button) findViewById(R.id.importance_add);
+
+
 
 
 
@@ -76,11 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
-        specialisation_add.setOnClickListener(new OnClickListener() {            // quand on clique sur le bouton main_options
-            public void onClick(View v) {
-                switchTo_specialisation_add();                                   // la fonction switchTo va changer l'activité
-            }
-        });
+
 
         commercial_add.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -103,6 +104,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar, menu);
+        //Button retourMenu = (Button) findViewById(R.id.action_bar);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.MainActivity.class);
+        startActivity(intent);
+        return true;
+    }
+
 /*
 10/04
 Matthieu

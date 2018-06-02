@@ -6,6 +6,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.ToggleButton;
+/*
+importe : 0
+Stock le seul attribut de la RadioRow
+*/
 
 public class RadioRow {
     private String name;

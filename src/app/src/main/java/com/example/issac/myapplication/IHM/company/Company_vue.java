@@ -5,6 +5,9 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -25,6 +28,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/*
+importe : 0
+Contient le formulaire d'ajout d'une entreprise, aucun import car champs vierges.
+Lors de la validation, une url est gen et met en place une requête PHP pour l'ajout en base.
+
+ */
+
 public class Company_vue extends AppCompatActivity {
     ListView mListView;
     TextView selected;
@@ -37,7 +47,6 @@ public class Company_vue extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_vue);
         mListView = (ListView) findViewById(R.id.listView);
-        selected = (TextView) findViewById(R.id.selected);
         company_add = (Button) findViewById(R.id.company_add);
         Random rand = new Random();
         JSONObject res;
@@ -104,4 +113,27 @@ public class Company_vue extends AppCompatActivity {
         Intent intent = new Intent(this, com.example.issac.myapplication.IHM.company.Company_add.class);        // changement d'activité
         startActivity(intent);
     }
+
+
+
+    /*
+    Matthieu
+    02/06
+    retourne des booléans true
+    Mise en forme du bouton superieur du menu
+     */
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar, menu);
+        //Button retourMenu = (Button) findViewById(R.id.action_bar);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.MainActivity.class);
+        startActivity(intent);
+        return true;
+    }
+
+
 }

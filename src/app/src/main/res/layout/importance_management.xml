@@ -35,7 +35,7 @@
                     android:id="@+id/gravite"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Nom de l'importance à ajouter" />
 
                 <EditText
                     android:id="@+id/resultat"
@@ -52,6 +52,26 @@
                     android:layout_weight="1"
                     android:text="Ajouter une importance"
                     tools:layout_editor_absoluteY="19dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/preImportanceList"
+                        android:layout_width="286dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Liste des importances" />
+
+                    <TextView
+                        android:id="@+id/preDeletedImportanceList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Liste des importances indésirables" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"

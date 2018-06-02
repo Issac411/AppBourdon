@@ -27,7 +27,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.issac.myapplication.IHM.Importance_management" />
-        <activity android:name="com.example.issac.myapplication.IHM.Main_options" />
         <activity android:name="com.example.issac.myapplication.IHM.specialisation.Specialisation_add" />
         <activity android:name="com.example.issac.myapplication.IHM.specialisation.Specialisation_vue" />
         <activity android:name="com.example.issac.myapplication.IHM.specialisation.Specialisation_details" />

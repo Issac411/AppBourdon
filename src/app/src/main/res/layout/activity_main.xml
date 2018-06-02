@@ -54,19 +54,6 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/specialisation_add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Ajouter une activité" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="70dp"
             android:orientation="horizontal">
 
@@ -75,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ajouter une importance" />
+                android:text="Gestion des importances" />
         </LinearLayout>
 
         <LinearLayout

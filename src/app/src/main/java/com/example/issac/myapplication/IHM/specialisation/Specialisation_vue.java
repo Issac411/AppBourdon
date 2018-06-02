@@ -5,8 +5,12 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import java.util.Random;
@@ -26,9 +30,9 @@ import java.util.List;
 
 public class Specialisation_vue extends AppCompatActivity implements JSONAct {
     ListView mListView;
-    TextView selected;
     Specialisation uneSpecialite;
     ArrayList<Specialisation> lesSpecialisations = new ArrayList<Specialisation>();
+    Button specialisationAdd;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -37,7 +41,7 @@ public class Specialisation_vue extends AppCompatActivity implements JSONAct {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specialisation_vue);
         mListView = (ListView) findViewById(R.id.listView);
-        selected = (TextView) findViewById(R.id.selected);
+        specialisationAdd = (Button) findViewById(R.id.specialisationAdd);
         Random rand = new Random();
 
         JSONObject res;
@@ -86,9 +90,38 @@ public class Specialisation_vue extends AppCompatActivity implements JSONAct {
             }
 
         });
+        specialisationAdd.setOnClickListener(new View.OnClickListener() {            // quand on clique sur le bouton main_options
+            public void onClick(View v) {
+                switchTo_specialisation_add();                                   // la fonction switchTo va changer l'activité
+            }
+        });
+
+
     }
 
 
+    public void switchTo_specialisation_add() {
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.specialisation.Specialisation_add.class);
+        startActivity(intent);
+    }
 
+    /*
+    Matthieu
+    02/06
+    retourne des booléans true
+    Mise en forme du bouton superieur du menu
+     */
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar, menu);
+        //Button retourMenu = (Button) findViewById(R.id.action_bar);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.MainActivity.class);
+        startActivity(intent);
+        return true;
+    }
 
 }

@@ -8,6 +8,10 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+/*
+importe : 0
+Stock les valeurs de la row en publique
+*/
 
 public class RadioRowViewHolder {
     public TextView name;
