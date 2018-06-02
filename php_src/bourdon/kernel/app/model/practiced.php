@@ -2,25 +2,44 @@
 require_once(LIB."Model.php");
 class practiced extends Model
 {
-    protected $idspecialisation;
-    protected $idcompany;
+    protected $idSpecialisation;
+    protected $idCompany;
 
     public function __construct()
     {
         parent::__construct("practiced", array("idSpecialisation","idCompany"));
-        $this->idspecialisation = null;
-        $this->idcompany = null;
+        $this->idSpecialisation = null;
+        $this->idCompany = null;
     }
-
 
 
 
     /**
      * @return mixed
      */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getIdSpecialisation()
     {
-        return $this->idspecialisation;
+        return $this->idSpecialisation;
     }
 
     /**
@@ -30,7 +49,7 @@ class practiced extends Model
      */
     public function setIdSpecialisation($idSpecialisation)
     {
-        $this->idspecialisation = $idspecialisation;
+        $this->idSpecialisation = $idSpecialisation;
 
         return $this;
     }
@@ -40,18 +59,20 @@ class practiced extends Model
      */
     public function getIdCompany()
     {
-        return $this->idcompany;
+        return $this->idCompany;
     }
 
     /**
-     * @param mixed $idSpecialisation
+     * @param mixed $idCompany
      *
      * @return self
      */
-    public function setIdCompany($idSpecialisation)
+    public function setIdCompany($idCompany)
     {
-        $this->idcompany = $idspecialisation;
+        $this->idCompany = $idCompany;
 
         return $this;
     }
+
+
 }

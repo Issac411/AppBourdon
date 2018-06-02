@@ -13,6 +13,11 @@ import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONObject;
 
+/*
+importe : 0
+Formulaire d'ajout des commerciaux
+*/
+
 public class Commercial_add extends AppCompatActivity {
     private Commercial unCommercial;
     private Button creation;

@@ -16,6 +16,11 @@ import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONObject;
 
+/*
+importe : lightCompany de Company_details
+contient le formulaire de modification des entreprises, doit recevoir une lightCompany sous le nom de "lightCompany_exported"
+
+ */
 public class Company_edit extends AppCompatActivity {
     private Company uneCompany;
     private Button edit;
@@ -57,7 +62,7 @@ public class Company_edit extends AppCompatActivity {
         companyAddress1_field = (EditText) findViewById(R.id.address1_field);
         companyAddress2_field = (EditText) findViewById(R.id.address2_field);
         companyCity_field = (EditText) findViewById(R.id.city_field);
-        companyPC_field = (EditText) findViewById(R.id.pc_field);
+        companyPC_field = (EditText) findViewById(R.id.pc_field);           // les champs sont assignés à des variables
         companyNum_field =(EditText) findViewById(R.id.num_field);
         companyFax_field = (EditText) findViewById(R.id.fax_field);
         companyMail_field = (EditText) findViewById(R.id.mail_field);
@@ -70,13 +75,13 @@ public class Company_edit extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        LightCompany imported = (LightCompany) intent.getSerializableExtra("lightCompany_exported");
+        LightCompany imported = (LightCompany) intent.getSerializableExtra("lightCompany_exported");    // recupération de la company selectionnée
         String lid = (String.valueOf(imported.getId()));
         companyNameField.setText(imported.getName());
         companyAddress1_field.setText(imported.getAddress1());
         companyAddress2_field.setText(imported.getAddress2());
         companyPC_field.setText(imported.getPc());
-        companyNum_field.setText(imported.getNum());
+        companyNum_field.setText(imported.getNum());                // définition de tout les champs avec les variables connues
         companyFax_field.setText(imported.getFax());
         companyInterName_field.setText(imported.getInterName());
         companyInterNickName_field.setText(imported.getInterNickName());
@@ -93,7 +98,7 @@ public class Company_edit extends AppCompatActivity {
             @Override
             public void onClick (View v){
                 JSONObject res = new JSONObject();
-                uneCompany = new Company();
+                uneCompany = new Company();         // condition de remplissage des champs
                 if(companyAddress1_field.getText().toString().length() > 0 && companyAddress2_field.getText().toString().length() > 0 && companyPC_field.getText().toString().length() > 0 && companyNum_field.getText().toString().length() > 0 && companyFax_field.getText().toString().length() > 0
                         && companyInterName_field.getText().toString().length() > 0 && companyInterNickName_field.getText().toString().length() > 0 && companyInterNum_field.getText().toString().length() > 0 && companyInterFax_field.getText().toString().length() > 0
                         && companyMail_field.getText().toString().length() > 0 && companyInterMail_field.getText().toString().length() > 0 && companyCity_field.getText().toString().length() > 0)
@@ -101,7 +106,7 @@ public class Company_edit extends AppCompatActivity {
                     String urle = uneCompany.urlGen("update",lid,
                             companyNameField.getText().toString(),
                             companyAddress1_field.getText().toString(),
-                            companyAddress2_field.getText().toString(),
+                            companyAddress2_field.getText().toString(),     // grande génération d'url
                             companyCity_field.getText().toString(),
                             companyPC_field.getText().toString(),
                             companyNum_field.getText().toString(),

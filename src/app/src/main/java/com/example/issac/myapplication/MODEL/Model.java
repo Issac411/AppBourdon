@@ -43,13 +43,6 @@ public abstract class Model extends Config
         protected boolean read(int id) {
         JSONObject json; // les données PHP seront encodés en JSON, du coup, on se prépare à le recevoir dans une variable du genre
         boolean res = false;
-        /*json = getJsonFromURL(config.getUrl()+this.table+"/read/"+ id);     // on build l'url, on prend le début dans config, puis le nom variable de la table (trouvé des enfants) + l'id recherché
-            if(json != null) {
-                this.putInObj(json);        // on loge le résultat dans une fonction qui sera abstraite dans model, elle variera selon l'objet (on peut pas, comme en PHP, remplir un tableeau en fonction
-                res = true;                // d'un nombre inconnu d'élements donc on prépare tout d'avance)
-            } else {
-                res = false;
-            }*/
             return res;
         }
 
@@ -96,7 +89,11 @@ public abstract class Model extends Config
         return url;
 
     }
-
+    /*
+    Boutte
+    retourne un objet json
+    transforme un objet en objet Json
+     */
     public static Object toJSON(Object object) throws JSONException {
         if (object instanceof Map) {
             JSONObject json = new JSONObject();
@@ -123,7 +120,10 @@ public abstract class Model extends Config
     public static Map<String, Object> getMap(JSONObject object, String key) throws JSONException {
         return toMap(object.getJSONObject(key));
     }
-
+    /*
+    Boutte
+    Transforme un JSON en map
+     */
     public static Map<String, Object> toMap(JSONObject object) throws JSONException {
         Map<String, Object> map = new HashMap();
         Iterator keys = object.keys();
@@ -133,7 +133,10 @@ public abstract class Model extends Config
         }
         return map;
     }
-
+    /*
+    Boutte
+    Transforme un JSONArray en liste
+     */
     public static List toList(JSONArray array) throws JSONException {
         List list = new ArrayList();
         for (int i = 0; i < array.length(); i++) {

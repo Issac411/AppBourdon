@@ -22,7 +22,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-
+/*
+importe : lightCompany de Company_vue
+Contient les détails de l'entreprise passée en itent sous le nom de : "lightCompany_exported" */
 public class Company_details extends AppCompatActivity {
     private TextView companyName;
     private TextView companyAddress1;
@@ -112,9 +114,9 @@ public class Company_details extends AppCompatActivity {
         for(int i=0;i<lesPratiques.size();i++) {
 
             if(lesPratiques.get(i).getIdCompany() == imported.getId()) {
-                for(int i2 = 0;i2<lesSpecialistions.size();i2++) {
+                for(int i2 = 0;i2<lesSpecialistions.size();i2++) {                      // chaque pratique va être vérifiée pour savoir si elle correspond à la spécialisation et l'entreprise.
                     if(lesSpecialistions.get(i2).getId() == lesPratiques.get(i).getIdSpecialisation()) {
-                        chaine = chaine + " : " +lesSpecialistions.get(i2).getLibelle();
+                        chaine = chaine + " : " +lesSpecialistions.get(i2).getLibelle();        // chaine informant des activités de l'entreprise
                         LesPratiquesDeLentreprise.add(lesPratiques.get(i));
                     }
                 }
@@ -127,6 +129,9 @@ public class Company_details extends AppCompatActivity {
             specialisations.setText(Html.fromHtml("<b>Secteur d'activité :</b>" + chaine));
         }
 
+
+        // Les boutons et leurs fonctions
+        //
         goToMap.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 switchTo_map(imported);
@@ -165,6 +170,16 @@ public class Company_details extends AppCompatActivity {
 
 
 
+    /*
+    les procédures suivantes gèrent les actions des boutons
+     */
+/*
+Matthieu
+30/05/18
+Entrée : Une entreprise type LightCompany
+Pas de sortie
+Permet de localiser l'entreprise courante via google map
+ */
     public void switchTo_map(LightCompany uneCompany) {
         Intent intent = getIntent();
         String address = "geo:0,0?q= "+uneCompany.getAddress1()+", "+uneCompany.getCity()+", "+uneCompany.getPc();
@@ -173,7 +188,13 @@ public class Company_details extends AppCompatActivity {
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
     }
-
+    /*
+    Matthieu
+    30/05/18
+    Entrée : id (d'une entreprise LightCompany ou Company)
+    Pas de sortie
+    Détruit l'entreprise
+     */
     public void deleteCompany(int id) {
         Company uneCompany = new Company();
         String urle = uneCompany.urlGen("delete", String.valueOf(id));
@@ -182,24 +203,51 @@ public class Company_details extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /*
+    Matthieu
+    30/05/18
+    Entrée : LightCompany
+    Pas de sortie
+    Mène a entrey_add pour ensuite ajouter un rendez vous
+     */
     public void switchTo_Entry_add(LightCompany exportedCompany){
         Intent intent = new Intent(this, com.example.issac.myapplication.IHM.entry.Entry_add.class);
         intent.putExtra("exportedCompany",exportedCompany);
         startActivity(intent);
     }
-
+    /*
+    Matthieu
+    30/05/18
+    Entrée : LightCompany
+    Pas de sortie
+    Lance l'activité d'édition d'entreprise en passant l'objet uneCompany
+     */
     public void editCompany(LightCompany uneCompany) {
         Intent intent = new Intent(getApplicationContext(), Company_edit.class);          // Pour sa on la loge dans une classe légère compatible avec le
         intent.putExtra("lightCompany_exported", uneCompany);                   // "serializable"
         startActivity(intent);
     }
+    /*
+    Matthieu
+    30/05/18
+    Entrée : LightCompany
+    Pas de sortie
+    Mène a entrey_add pour ensuite ajouter un rendez vous
+     */
 
     public void specialisationManagement(LightCompany uneCompany) {
-        Intent intent = new Intent(this, Company_manage_specialisation.class);          // Pour sa on la loge dans une classe légère compatible avec le
-        intent.putExtra("lightCompany_exported", uneCompany);                   // "serializable"
+        Intent intent = new Intent(this, Company_manage_specialisation.class);
+        intent.putExtra("lightCompany_exported", uneCompany);
         startActivity(intent);
     }
-
+    /*
+    Matthieu
+    30/05/18
+    Entrée : LightCompany
+    Pas de sortie
+    Ne change pas d'activité, éxécute simplement une requête de suppression des spécialités et recharge cette même activité
+                                                                                                            ^- Nota : Il faudrait trouver le moyen de fermer des activités, elles s'accumulent...
+     */
     public void specialisationDelete(LightCompany imported) {
         int i;
         String url ="";
@@ -208,8 +256,8 @@ public class Company_details extends AppCompatActivity {
             unePracticed.getJsonFromURL(url);
         }
         specialisations.setText(url);
-        Intent intent = new Intent(this, Company_details.class);          // Pour sa on la loge dans une classe légère compatible avec le
-        intent.putExtra("lightCompany_exported", imported);                   // "serializable"
+        Intent intent = new Intent(this, Company_details.class);
+        intent.putExtra("lightCompany_exported", imported);
         startActivity(intent);
     }
 

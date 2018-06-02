@@ -15,6 +15,13 @@ import com.example.issac.ppe2sanskt.R;
 
 import org.json.JSONObject;
 
+/*
+importe : 0
+Contient le formulaire d'ajout d'une entreprise, aucun import car champs vierges.
+Lors de la validation, une url est gen et met en place une requête PHP pour l'ajout en base.
+
+ */
+
 public class Company_add extends AppCompatActivity {
     private Company uneCompany;
     private Button creation;
@@ -54,7 +61,7 @@ public class Company_add extends AppCompatActivity {
         creation = (Button) findViewById(R.id.creation);
         companyNameField = (EditText) findViewById(R.id.name_field);
         companyAddress1_field = (EditText) findViewById(R.id.address1_field);
-        companyAddress2_field = (EditText) findViewById(R.id.address2_field);
+        companyAddress2_field = (EditText) findViewById(R.id.address2_field);       //assignation de variables aux champs
         companyCity_field = (EditText) findViewById(R.id.city_field);
         companyPC_field = (EditText) findViewById(R.id.pc_field);
         companyNum_field =(EditText) findViewById(R.id.num_field);
@@ -75,7 +82,7 @@ public class Company_add extends AppCompatActivity {
                 @Override
                 public void onClick (View v){
                 JSONObject res = new JSONObject();
-                uneCompany = new Company();
+                uneCompany = new Company();     // if de vérification, les champs doivent avoir au moins un caractère, sinon, pas de tentative d'ajout.
                 if(companyAddress1_field.getText().toString().length() > 0 && companyAddress2_field.getText().toString().length() > 0 && companyPC_field.getText().toString().length() > 0 && companyNum_field.getText().toString().length() > 0 && companyFax_field.getText().toString().length() > 0
                         && companyInterName_field.getText().toString().length() > 0 && companyInterNickName_field.getText().toString().length() > 0 && companyInterNum_field.getText().toString().length() > 0 && companyInterFax_field.getText().toString().length() > 0
                         && companyMail_field.getText().toString().length() > 0 && companyInterMail_field.getText().toString().length() > 0 && companyCity_field.getText().toString().length() > 0)

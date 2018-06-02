@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class LightCompany  implements Serializable {
     private int id;
-    private String name;        // le texte que l'utilisateur compléte
+    private String name;
     private String address1;
     private String address2;
     private String pc;

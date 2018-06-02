@@ -29,6 +29,12 @@ import java.time.chrono.Chronology;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+importe : lightCompany de Company_details
+contient deux tableaux : celui des spécialités et un second, vide, qui va contenir les activités désirées par l'utilisateur.
+Lors de la validation par l'unique bouton, l'id de l'entreprise est récupérée par le lightCompany "lightCompany_exported"
+
+ */
 public class Company_manage_specialisation extends AppCompatActivity {
     JSONObject specialisation_JSON = new JSONObject();
     JSONArray specialisation_JSONArray = new JSONArray();
@@ -39,7 +45,7 @@ public class Company_manage_specialisation extends AppCompatActivity {
     int i = 0;
     int i2 = 0;
     TextView testView;
-    ArrayList<RadioRow> rows = new ArrayList<>();
+    ArrayList<RadioRow> rows = new ArrayList<>();               // déclaration et instanciations des variables et tableaux
     ListView mListView;
     Button set;
     TextView specificName;
@@ -80,6 +86,19 @@ public class Company_manage_specialisation extends AppCompatActivity {
         mListView.setAdapter(adapter);
         i=0;
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+
+
+
+           /*
+             Matthieu
+             01/06
+             retourne
+             entrée est la liste actuelle, la vue (activity_company_manage_specialisation), la position dans la liste de l'objet selectionné et son id.
+             Permet d'ajouter une spécialité dans le tableau des spécialités selectionnés
+            */
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 RadioRow selectedRow = (RadioRow) mListView.getItemAtPosition(position);               // on retrouve la row cliquée
@@ -99,6 +118,11 @@ public class Company_manage_specialisation extends AppCompatActivity {
             }
         });
 
+            /*
+            Matthieu
+            01/06
+            Lors du clic sur le bouton, la liste N°2 contenant les spécialités sélectionnés
+             */
         set.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 for(i=0;i<mListView2.getCount();i++) {
@@ -118,9 +142,7 @@ public class Company_manage_specialisation extends AppCompatActivity {
                             } else {
                                 i2++;
                             }
-
                         }
-
                     }
                     found = false;
                     Intent intent = new Intent(getApplicationContext(), Company_details.class);          // Pour sa on la loge dans une classe légère compatible avec le

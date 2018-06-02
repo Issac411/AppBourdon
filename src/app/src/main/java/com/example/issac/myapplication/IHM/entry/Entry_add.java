@@ -35,6 +35,11 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.SortedMap;
 
+
+/*
+importe : 0
+Formulaire d'ajout des rendez-vous, rassemble la liste des Commerciaux, des Importances et.*/
+
 public class Entry_add extends AppCompatActivity {
 
     private Entry laVisite = new Entry();
@@ -44,7 +49,7 @@ public class Entry_add extends AppCompatActivity {
     private TextView txtDateTime;
     private TextView txtCompany;
     private TextView txtDuration;
-    private TextView txtComment;
+    private TextView txtComment;                    // déclaration des champs
     private Spinner spinnerCommercial;
     private Spinner spinnerImportance;
     private Button btnTime;

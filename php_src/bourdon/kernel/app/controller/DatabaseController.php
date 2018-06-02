@@ -291,8 +291,8 @@ return un res au format Json
                 }
                 break;
             case "delete":
-                if(!empty($param) && $this->commercial->read($param)){ 
-                    $data['res'] = $this->commercial->delete($param);
+                if(!empty($param) && $this->practiced->read(array($param,$param2))){ 
+                    $data['res'] = $this->practiced->delete(array($param,$param2));
                 } else {
                     $data['res'] = false;
                 }

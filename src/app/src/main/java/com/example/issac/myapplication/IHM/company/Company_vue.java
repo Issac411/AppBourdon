@@ -90,7 +90,7 @@ public class Company_vue extends AppCompatActivity {
 
 
 
-        company_add.setOnClickListener(new View.OnClickListener() {
+        company_add.setOnClickListener(new View.OnClickListener() {         // quand on clique sur le bouton d'ajout
             public void onClick(View v) {
                 switchTo_company_add();
             }
@@ -101,7 +101,7 @@ public class Company_vue extends AppCompatActivity {
 
 
     public void switchTo_company_add() {
-        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.company.Company_add.class);
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.company.Company_add.class);        // changement d'activité
         startActivity(intent);
     }
 }

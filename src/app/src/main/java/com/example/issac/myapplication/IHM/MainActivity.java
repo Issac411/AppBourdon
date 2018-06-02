@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private Button specialisation_add;
     private Button commercial_add;
     private Button company_vue;
+    private Button importance_add;
 
 
     @Override
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         specialisation_add = (Button) findViewById(R.id.specialisation_add);        //
         commercial_add = (Button) findViewById(R.id.commercial_add);
         company_vue = (Button) findViewById(R.id.company_vue);
+        importance_add = (Button) findViewById(R.id.importance_add);
 
 
 
@@ -83,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
         commercial_add.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 switchTo_commercial_add();
+            }
+        });
+
+        importance_add.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                importance_add();
             }
         });
 
@@ -121,6 +129,11 @@ activity (this) to (user_list)
 
     public void switchTo_company_vue() {
         Intent intent = new Intent(this, com.example.issac.myapplication.IHM.company.Company_vue.class);
+        startActivity(intent);
+    }
+
+    public void importance_add() {
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.Importance_management.class);
         startActivity(intent);
     }
 
