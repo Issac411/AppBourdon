@@ -217,7 +217,7 @@ public class Entry_add extends AppCompatActivity {
         laVisite.setDate(timestamp);
         laVisite.setComment(txtComment.getText().toString());
         laVisite.setDuration(Integer.parseInt(txtDuration.getText().toString(),10));
-        laVisite.setStatus("Programmer");
+        laVisite.setStatus("Programmée");
     }
 
 

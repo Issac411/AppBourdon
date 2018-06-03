@@ -6,10 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".IHM.entry.Entry_vue">
 
-    <ListView
-        android:id="@+id/listEntry"
-        android:layout_width="784dp"
-        android:layout_height="1127dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="451dp"
+            android:gravity="top"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="451dp"
+                android:orientation="horizontal">
+
+                <ListView
+                    android:id="@+id/listEntry"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="16dp">
+
+                </ListView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

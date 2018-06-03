@@ -47,7 +47,6 @@ import com.example.issac.ppe2sanskt.R;
 public class MainActivity extends AppCompatActivity {
     private Button exit;                                                // on déclare à l'avance tout les boutons ici dans l'activité
     private Button specialisation_vue;
-    private Button specialisation_add;
     private Button commercial_add;
     private Button company_vue;
     private Button importance_add;
