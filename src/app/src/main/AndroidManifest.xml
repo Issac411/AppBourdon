@@ -37,7 +37,9 @@
         <activity android:name="com.example.issac.myapplication.IHM.company.Company_details" />
         <activity android:name="com.example.issac.myapplication.IHM.company.Company_edit" />
         <activity android:name="com.example.issac.myapplication.IHM.entry.Entry_add" />
-        <activity android:name="com.example.issac.myapplication.IHM.company.Company_manage_specialisation"></activity>
+        <activity android:name="com.example.issac.myapplication.IHM.company.Company_manage_specialisation" />
+        <activity android:name="com.example.issac.myapplication.IHM.entry.Entry_vue" />
+        <activity android:name="com.example.issac.myapplication.IHM.entry.Entry_details"></activity>
     </application>
 
 </manifest>

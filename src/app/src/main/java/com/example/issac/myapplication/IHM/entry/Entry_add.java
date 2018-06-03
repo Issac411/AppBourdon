@@ -175,11 +175,11 @@ public class Entry_add extends AppCompatActivity {
 
     private ArrayList<Importance> getListImportance(){
         Importance uneImportance = new Importance();
-        JSONObject resReadCommercial;
+        JSONObject res;
         String urlRealCommercial = uneImportance.urlGen("read");
-        resReadCommercial = uneImportance.getJsonFromURL(urlRealCommercial);
-        JSONArray jsonArrayCommercial = uneImportance.getAllObject(resReadCommercial);
-        ArrayList<JSONObject> lesElements = JSONAct.JSONArrayToArray(jsonArrayCommercial);
+        res = uneImportance.getJsonFromURL(urlRealCommercial);
+        JSONArray jsonArrayImportance = uneImportance.getAllObject(res);
+        ArrayList<JSONObject> lesElements = JSONAct.JSONArrayToArray(jsonArrayImportance);
         return uneImportance.JSONArrayToImportances(lesElements);
     }
 
@@ -223,6 +223,7 @@ public class Entry_add extends AppCompatActivity {
         laVisite.create();
         Intent intent = new Intent(getApplicationContext(), Company_vue.class);
         startActivity(intent);
+        finish();
     }
 
 }

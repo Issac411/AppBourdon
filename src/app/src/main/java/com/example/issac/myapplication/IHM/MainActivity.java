@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private Button commercial_add;
     private Button company_vue;
     private Button importance_add;
+    private Button btnEntry_vue;
 
 
     @Override
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         commercial_add = (Button) findViewById(R.id.commercial_add);
         company_vue = (Button) findViewById(R.id.company_vue);
         importance_add = (Button) findViewById(R.id.importance_add);
+        btnEntry_vue = (Button) findViewById(R.id.entry_vue);
 
 
 
@@ -100,6 +102,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnEntry_vue.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                switchTo_entry_vue();
+            }
+        });
+
 
 
     }
@@ -129,6 +137,11 @@ activity (this) to (user_list)
 
     public void switchTo_company_vue() {
         Intent intent = new Intent(this, com.example.issac.myapplication.IHM.company.Company_vue.class);
+        startActivity(intent);
+    }
+
+    public void switchTo_entry_vue() {
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.entry.Entry_vue.class);
         startActivity(intent);
     }
 
