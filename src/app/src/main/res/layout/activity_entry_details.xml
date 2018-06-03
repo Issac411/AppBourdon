@@ -11,17 +11,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/Entreprise"
+        <Button
+            android:id="@+id/btnCompany"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Entreprise : " />
-
-        <TextView
-            android:id="@+id/txtCompany"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Company Name" />
+            android:text="CompanyName" />
 
         <TextView
             android:id="@+id/Commercial"

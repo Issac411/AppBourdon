@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.issac.myapplication.IHM.company.Company_details;
+import com.example.issac.myapplication.MODEL.Company;
 import com.example.issac.myapplication.MODEL.Entry;
+import com.example.issac.myapplication.MODEL.LightCompany;
 import com.example.issac.myapplication.MODEL.LightEntry;
 import com.example.issac.ppe2sanskt.R;
 
@@ -15,7 +18,7 @@ public class Entry_details extends AppCompatActivity {
 
     private Entry uneEntry;
 
-    private TextView txtCompany;
+    private Button btnCompany;
     private TextView txtCommercial;
     private TextView txtImportance;
     private TextView txtDateTime;
@@ -31,7 +34,7 @@ public class Entry_details extends AppCompatActivity {
         setContentView(R.layout.activity_entry_details);
         Intent intent = getIntent();
 
-        txtCompany = (TextView) findViewById(R.id.txtCompany);
+        btnCompany = (Button) findViewById(R.id.btnCompany);
         txtCommercial = (TextView) findViewById(R.id.txtCommercial);
         txtImportance = (TextView) findViewById(R.id.txtImportance);
         txtDateTime = (TextView) findViewById(R.id.txtDateTime);
@@ -44,13 +47,18 @@ public class Entry_details extends AppCompatActivity {
         LightEntry entry_imported = (LightEntry) intent.getSerializableExtra("entry_exported");
         uneEntry = new Entry(entry_imported);
 
-        txtCompany.setText(uneEntry.getCompany().getName());
+        Company uneCompany;
+        uneCompany = uneEntry.getCompany();
+
+
+        btnCompany.setText(uneCompany.getName());
         txtCommercial.setText(uneEntry.getCommercial().getName());
         txtDateTime.setText(uneEntry.getDate().toString());
         txtComment.setText(uneEntry.getComment().toString());
         txtDuration.setText(String.valueOf(uneEntry.getDuration()));
         txtImportance.setText(uneEntry.getImportance().getContent());
         txtStatus.setText(uneEntry.getStatus());
+
 
         btnAnnuler.setOnClickListener(new View.OnClickListener() {            // quand on clique sur le bouton
             public void onClick(View v) {
@@ -63,6 +71,22 @@ public class Entry_details extends AppCompatActivity {
             }
         });
 
+
+        btnCompany.setOnClickListener(new View.OnClickListener() {            // quand on clique sur le bouton
+            public void onClick(View v) {
+                switchToCompany(uneCompany);
+            }
+        });
+
+
+    }
+
+    public void switchToCompany(Company uneCompany){
+        LightCompany company_exported;
+        company_exported = new LightCompany(uneCompany);
+        Intent intent = new Intent(getApplicationContext(), Company_details.class);          // Pour sa on la loge dans une classe légère compatible avec le
+        intent.putExtra("lightCompany_exported", company_exported);                   // "serializable"
+        startActivity(intent);
 
     }
 }
