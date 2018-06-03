@@ -17,6 +17,10 @@ import android.widget.ToggleButton;
 import com.example.issac.ppe2sanskt.R;
 
 import java.util.List;
+/*
+importe : adapter
+Assigne les valeurs de row ciblée
+*/
 
 public class RadioRowAdapter extends ArrayAdapter<RadioRow> {
     //tweets est la liste des models à afficher

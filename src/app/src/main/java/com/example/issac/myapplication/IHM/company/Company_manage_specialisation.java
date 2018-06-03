@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -44,7 +47,6 @@ public class Company_manage_specialisation extends AppCompatActivity {
     String url = "nothing";
     int i = 0;
     int i2 = 0;
-    TextView testView;
     ArrayList<RadioRow> rows = new ArrayList<>();               // déclaration et instanciations des variables et tableaux
     ListView mListView;
     Button set;
@@ -66,7 +68,6 @@ public class Company_manage_specialisation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_manage_specialisation);
         Intent intent = getIntent();
-        testView = (TextView) findViewById(R.id.testView);
         mListView = (ListView) findViewById(R.id.mListView);
         mListView2 = (ListView) findViewById(R.id.mListView2);
         set = (Button) findViewById(R.id.set);
@@ -80,7 +81,6 @@ public class Company_manage_specialisation extends AppCompatActivity {
         for(i=0;i<lesSpecialistions.size();i++) {
 
             rows.add(new RadioRow(lesSpecialistions.get(i).getLibelle(),true));                         // Chaque spécialisation aura une ligne dans le tableau.
-            testView.setText(rows.get(i).getName());// brr test
         }
         RadioRowAdapter adapter = new RadioRowAdapter(this, rows);          // affichage de la liste
         mListView.setAdapter(adapter);
@@ -102,9 +102,7 @@ public class Company_manage_specialisation extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 RadioRow selectedRow = (RadioRow) mListView.getItemAtPosition(position);               // on retrouve la row cliquée
-                testView.setText(String.valueOf(selectedRow.getName()));
                 for(i2=0;i2<rowsSelected.size();i2++) {
-                    testView.setText(String.valueOf(i2));
                     if(rowsSelected.get(i2).getName() == selectedRow.getName()) {
                         occurence = true;
                     }
@@ -134,7 +132,6 @@ public class Company_manage_specialisation extends AppCompatActivity {
                             idSpecialisation = lesSpecialistions.get(i2).getId();
                             String url = pratique.urlGen("create",String.valueOf(idSpecialisation),String.valueOf(imported.getId()));
                             specialisation_JSON = pratique.getJsonFromURL(url);
-                            testView.setText(url);
                             found = true;
                         } else {
                             if(lesSpecialistions.size() == i2) {
@@ -156,5 +153,24 @@ public class Company_manage_specialisation extends AppCompatActivity {
 
 
         }
+
+    /*
+    Matthieu
+    02/06
+    retourne des booléans true
+    Mise en forme du bouton superieur du menu
+    */
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar, menu);
+        //Button retourMenu = (Button) findViewById(R.id.action_bar);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.MainActivity.class);
+        startActivity(intent);
+        return true;
+    }
 
 }

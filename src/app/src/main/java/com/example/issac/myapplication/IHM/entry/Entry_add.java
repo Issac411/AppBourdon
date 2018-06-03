@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -224,6 +227,25 @@ public class Entry_add extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Company_vue.class);
         startActivity(intent);
         finish();
+    }
+
+    /*
+Matthieu
+02/06
+retourne des booléans true
+Mise en forme du bouton superieur du menu
+ */
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar, menu);
+        //Button retourMenu = (Button) findViewById(R.id.action_bar);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent(this, com.example.issac.myapplication.IHM.MainActivity.class);
+        startActivity(intent);
+        return true;
     }
 
 }
