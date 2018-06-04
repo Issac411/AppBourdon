@@ -1,0 +1,41 @@
+INSERT INTO importance (content) VALUES ('Mineur');
+INSERT INTO importance (content) VALUES ('Moyenne');
+INSERT INTO importance (content) VALUES ('Majeur');
+INSERT INTO importance (content) VALUES ('Critique');
+
+INSERT INTO specialisation (libelle) VALUES ('Pret à porter');
+INSERT INTO specialisation (libelle) VALUES ('Couture');
+INSERT INTO specialisation (libelle) VALUES ('Ameublement');
+INSERT INTO specialisation (libelle) VALUES ('Décoration');
+INSERT INTO specialisation (libelle) VALUES ('Hôtellerie');
+INSERT INTO specialisation (libelle) VALUES ('Location');
+INSERT INTO specialisation (libelle) VALUES ('Autre');
+
+INSERT INTO commercial (nickname,name,address1,city,pc) VALUES ('Patrick','Gringas','11 rue des lieutemants Thomazo','DRAGUIGNAN','83300');
+INSERT INTO commercial (nickname,name,address1,city,pc) VALUES ('Étienne','Bergeron','80 Rue Joseph Vernet','BAR-LE-DUC','55000');
+INSERT INTO commercial (nickname,name,address1,city,pc) VALUES ('Martine  ','Arnoux','14 Chemin des Bateliers','ERMONT','95120 ');
+INSERT INTO commercial (nickname,name,address1,city,pc) VALUES ('Leala','Renaud','36 Rue Hubert de Lisle','MARSEILLE','13004 ');
+
+INSERT INTO company (name,address1,city,pc,mail,num,fax,intername,internickname,intermail,internum,interfax) VALUES ('SleepWell','34 grand rue','POITIERS','86000','ContactCom@sleepwell.com','0549235498','0546875532','Morraut','Michelle','mmorraut@gmail.com','0549221687','0549321574');
+INSERT INTO company (name,address1,city,pc,mail,num,fax,intername,internickname,intermail,internum,interfax) VALUES ('LeDauphin','39 Boulevard Pierre Curie','THOUARS','79100','tolotmau@outlook.com','0549248571','0549854178','Tolot','Maurice','tolotmau@outlook.com','0549248571','0549854178');
+INSERT INTO company (name,address1,city,pc,mail,num,fax,intername,internickname,intermail,internum,interfax) VALUES ('Arcadia','42 Rue Aimé Souché','CHATELLERAULT','86100','Arcadia@laposte.net','0549886233','0549478510','Dechamps','Martin','Arcadia@laposte.net','0549886233','0549478510');
+INSERT INTO company (name,address1,city,pc,mail,num,fax,intername,internickname,intermail,internum,interfax) VALUES ('Montgom','50 Chemin du Roc','CHATELLERAULT','86100','jjMont@gmail.com','0549874569','0549331458','Jouneau','Jules','jjMont@gmail.com','0549874569','0549331458');
+INSERT INTO company (name,address1,city,pc,mail,num,fax,intername,internickname,intermail,internum,interfax) VALUES ('Mobal','25 Rue des Groseillers','CHASSENEUIL-DU-POITOU','86360','dupontjean@mobal.com','0549285478','0546774539','Dupont','Jean','JeanDupont@gmail.com','0549475896','0549125245');
+INSERT INTO company (name,address1,city,pc,mail,num,fax,intername,internickname,intermail,internum,interfax) VALUES ('Doto','6 Rue de la Cure Saint-Jean','BRESSUIRE','79300','mjanne@hotmail.fr','0549472536','0549221487','Mogta','Janne','mjanne@hotmail.fr','0549354498','0549212236');
+INSERT INTO company (name,address1,city,pc,mail,num,fax,intername,internickname,intermail,internum,interfax) VALUES ('SaumelEnor','5 rue du Pressoir Chenaie','Nantes','44104' ,'SaumelEnor@live.fr','0549298498','0544875532','SilverSteel','Andrew','Andrew@gmail.com','0520221687','0549344574');
+INSERT INTO company (name,address1,city,pc,mail,num,fax,intername,internickname,intermail,internum,interfax) VALUES ('Literie Dépôt','4 Rue du Charron,','Saint-Herblain','44800' ,'reqdepot@gmail.com','0251788484','0251788484','Michel','Alain','reqdepot@gmail.com','0251788484','0251788484');
+
+INSERT INTO practiced VALUES (5,1);
+INSERT INTO practiced VALUES (5,2);
+INSERT INTO practiced VALUES (3,3);
+INSERT INTO practiced VALUES (4,3);
+INSERT INTO practiced VALUES (6,5);
+INSERT INTO practiced VALUES (1,7);
+INSERT INTO practiced VALUES (2,7);
+
+INSERT INTO entry (idcompany,idcommercial,idimportance,date,comment,duration,status) VALUES (1,3,2,'2018-06-13 14:00:00','Vente nouveau produit','40','PROGRAMMEE');
+INSERT INTO entry (idcompany,idcommercial,idimportance,date,comment,duration,status) VALUES (2,4,1,'2018-06-15 16:35:00','Signature','15','PROGRAMMEE');
+INSERT INTO entry (idcompany,idcommercial,idimportance,date,comment,duration,status) VALUES (8,1,3,'2018-06-24 15:15:00','Prospect','60','PROGRAMMEE');
+INSERT INTO entry (idcompany,idcommercial,idimportance,date,comment,duration,status) VALUES (5,2,1,'2018-06-30 08:45:00','Reunion','45','ANNULEE');
+INSERT INTO entry (idcompany,idcommercial,idimportance,date,comment,duration,status) VALUES (4,2,2,'2018-07-02 10:40:00','Tests chez le client','45','ROGRAMMEE');
+

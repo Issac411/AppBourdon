@@ -1,6 +1,6 @@
 CREATE TABLE importance(
   id SERIAL,
-  libelle varchar(100),
+  content varchar(100),
   CONSTRAINT pk_importance PRIMARY KEY(id)
 );
  
@@ -47,7 +47,7 @@ create table commercial(
     nickname varchar(500) NOT NULL,
   name varchar(500) NOT NULL,
   address1 varchar(500) NOT NULL,
-  address2 varchar(500) NOT NULL,
+  address2 varchar(500) ,
     city varchar(50) NOT NULL,
   pc varchar(5) NOT NULL,
     CONSTRAINT pk_commercial PRIMARY KEY (id)
